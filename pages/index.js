@@ -21,7 +21,7 @@ export default function Home() {
         />
         <img
           src="/codeBlock.png"
-          className="absolute z-10 right-0 lg:top-20 translate-x-[40%] lg:translate-x-[10%] lg:h-[500px] brightness-50 opacity-30 lg:opacity-100 lg:brightness-95 top-36"
+          className="absolute z-10 right-0 lg:top-20 translate-x-[40%] lg:translate-x-[10%] lg:h-[600px] brightness-50 opacity-30 lg:opacity-100 lg:brightness-95 top-36"
           alt=""
         />
         <img
