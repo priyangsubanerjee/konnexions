@@ -26,7 +26,7 @@ export default function Home() {
       <div className="relative h-screen w-screen overflow-y-auto overflow-x-hidden">
         <img
           src="/blueGradient.png"
-          className="w-full h-[350px] scale-[2] object-contain absolute left-0 -translate-y-[30%] -translate-x-1/2 top-[0px]"
+          className="scale-[2] blur-xl object-contain absolute left-0 -translate-y-[30%] -translate-x-1/2 top-[0px]"
           alt=""
         />
         <img
@@ -38,7 +38,7 @@ export default function Home() {
 
         <img
           src="/codeBlock.png"
-          className="absolute right-0 translate-x-[40%] brightness-50 opacity-30 top-20"
+          className="absolute right-0 translate-x-[40%] brightness-50 opacity-30 top-36"
           alt=""
         />
         <div className="absolute inset-0 z-20 pt-24 px-6">
