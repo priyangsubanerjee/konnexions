@@ -16,7 +16,7 @@ export default function Home() {
         <img
           placeholder="blur"
           src="/maroonGradient.png"
-          className="w-[500px] h-[500px] z-0 scale-[2] blur-xl object-contain absolute right-0 translate-x-1/2 top-[600px]"
+          className="w-[500px] h-[500px] z-0 scale-[2] blur-xl object-contain absolute right-0 translate-x-1/2 top-[600px] lg:top-[1000px]"
           alt=""
         />
         <img
@@ -26,12 +26,12 @@ export default function Home() {
         />
         <img
           src="/blueGradient.png"
-          className="hidden lg:block w-[500px] h-[500px] z-0 scale-[2] blur-xl object-contain absolute right-0 translate-y-[30%] translate-x-1/2 top-[50px]"
+          className="hidden lg:block w-[500px] h-[500px] z-0 scale-[2] blur-xl object-contain absolute right-0 translate-y-[30%] translate-x-1/2 top-[0px] brightness-50"
           alt=""
         />
         <div className="absolute inset-0 z-20 pt-24 lg:pt-44">
           <Introduction />
-          <Team className={"mt-24"} />
+          <Team className={"mt-24 lg:mt-56"} />
         </div>
       </div>
     </div>
