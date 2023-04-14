@@ -27,13 +27,13 @@ export default function Home() {
           className="w-[500px] h-[500px] scale-[2] object-cover absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2"
           alt=""
         /> */}
-        {/* 
         <img
           src="/maroonGradient.png"
           className="w-[500px] h-[500px] scale-[2] object-cover absolute right-0 translate-x-1/2 top-[600px]"
           alt=""
         />
 
+        {/* 
         <img
           src="/codeBlock.png"
           className="absolute right-0 translate-x-[40%] brightness-50 opacity-30 top-20"
