@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 function Team({ className }) {
   return (
     <div className={`${className} team pb-44`}>
       <div>
-        <h1 className="text-white text-xl text-center font-extrabold">
+        <h1 className="text-white text-xl lg:text-2xl text-center font-extrabold">
           Lorem ipsum dolor
         </h1>
         <p className="text-center text-slate-200 mt-1">

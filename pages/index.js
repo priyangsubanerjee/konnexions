@@ -31,7 +31,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 z-20 pt-24 lg:pt-44">
           <Introduction />
-          <Team className={"mt-24 lg:mt-56"} />
+          <Team className={"mt-24 lg:mt-[400px]"} />
         </div>
       </div>
     </div>
