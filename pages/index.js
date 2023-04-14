@@ -22,12 +22,12 @@ export default function Home() {
         </button>
       </div>
       <div className="relative h-screen w-screen overflow-y-auto overflow-x-hidden">
-        <img
+        {/* <img
           src="/blueGradient.png"
           className="w-[500px] h-[500px] scale-[2] object-cover absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2"
           alt=""
-        />
-
+        /> */}
+        {/* 
         <img
           src="/maroonGradient.png"
           className="w-[500px] h-[500px] scale-[2] object-cover absolute right-0 translate-x-1/2 top-[600px]"
@@ -38,7 +38,7 @@ export default function Home() {
           src="/codeBlock.png"
           className="absolute right-0 translate-x-[40%] brightness-50 opacity-30 top-20"
           alt=""
-        />
+        /> */}
         <div className="absolute inset-0 z-20 pt-24 px-6">
           <div className="intro">
             <h1 className="text-white text-4xl font-extrabold">
