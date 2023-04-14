@@ -24,12 +24,13 @@ export default function Home() {
       <div className="relative h-screen w-screen overflow-y-auto overflow-x-hidden">
         <img
           src="/blueGradient.png"
-          className="w-[500px] h-[500px] scale-[2] object-cover absolute left-0 -translate-x-1/2 top-0 -translate-y-1/2"
+          className="w-full h-[350px] scale-[2] object-contain absolute left-0 -translate-y-[30%] -translate-x-1/2 top-[0px]"
           alt=""
         />
         <img
+          placeholder="blur"
           src="/maroonGradient.png"
-          className="w-[500px] h-[500px] scale-[2] object-cover absolute right-0 translate-x-1/2 top-[600px]"
+          className="w-[500px] h-[500px] scale-[2] object-contain absolute right-0 translate-x-1/2 top-[600px]"
           alt=""
         />
 
