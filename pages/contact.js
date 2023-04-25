@@ -1,76 +1,118 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useState } from "react";
 
 const Contact = () => {
-    const [gmailError, setGmailError] = useState('')
-    const [formSubmit, setFormSubmit] = useState(false)
-    const [contactDetails, setContactDetails] = useState({
-        name: "",
-        email: "",
-        message: "",
-    })
+  const [gmailError, setGmailError] = useState("");
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [contactDetails, setContactDetails] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-    useEffect(() => {
-        if (contactDetails.name.length == 0 || contactDetails.email.length == 0 || contactDetails.message.length == 0) {
-            setFormSubmit(false)
-            return;
-        }
-        else if (!contactDetails.email.includes("@")) {
-            setGmailError("Enter a valid email address")
-            setFormSubmit(false)
-            return;
-        }
-        else setFormSubmit(true);
-        setGmailError("");
-    }, [contactDetails])
+  useEffect(() => {
+    if (
+      contactDetails.name.length == 0 ||
+      contactDetails.email.length == 0 ||
+      contactDetails.message.length == 0
+    ) {
+      setFormSubmit(false);
+      return;
+    } else if (!contactDetails.email.includes("@")) {
+      setGmailError("Enter a valid email address");
+      setFormSubmit(false);
+      return;
+    } else setFormSubmit(true);
+    setGmailError("");
+  }, [contactDetails]);
   return (
     <>
-    <div className='flex flex-col justify-center h-screen bg-black'>
-        <img src="./images/mail.png" alt="mail" className='absolute w-[412px] top-[-10%] left-0'/>
-        <div>
-            <h1 className='text-white text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] text-center max-w-[1440px] m-auto'>Lorem ipsum dolor sit amet.</h1> 
-            <div className='text-white text-center mt-4 text-[.7rem] md:text-[1rem]  lg:text-[1.25rem] w-[100vw]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate.</div>
-            <div className='flex justify-center'>
-            <div className='w-[80vw] md:w-[700px] lg:w-[800px] 2xl:w-[900px] mt-8 md:mt-12 lg:mt-16'>
-                <form action="submit" >
-                    <div className='flex flex-col justify-center md:flex-row gap-8 mt-8 w-[100%]'>
-                        <div className='md:w-[50%] w-[100%]'>
-                            <div className='text-white mb-4'>Name</div>
-                            <input 
-                            value={contactDetails.name}
-                            onChange={(e) => setContactDetails({...contactDetails, name: e.target.value})}
-                            className='bg-[#333] rounded-sm h-12 w-[100%] text-white px-6 outline-none'
-                            type="text" placeholder='Joseph' />
-                        </div>
-                        <div className='md:w-[50%] w-[100%]'>
-                            <div className='text-white mb-4'>Email</div>
-                            <input 
-                            value={contactDetails.email}
-                            onChange={(e) => setContactDetails({...contactDetails, email: e.target.value})}
-                            className='bg-[#333] rounded-sm h-12 w-[100%] px-6 outline-none text-white' 
-                            type="gmail" placeholder='Joseph@gmail.com'/>
-                        </div>
+      <div className="fixed inset-0 h-screen w-screen bg-black overflow-x-hidden">
+        <div className="relative inset-0 h-screen w-screen overflow-x-hidden">
+          <div className="h-[1000px] w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#6C63FF]/70 lg:from-[#6C63FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="absolute py-20 inset-0 h-screen w-screen z-30 overflow-y-auto overflow-x-hidden scrollbar-hide">
+            <img
+              src="./images/mail.png"
+              alt="mail"
+              className="absolute w-[212px] md:w-[412px] top-[-10%] left-0 "
+            />
+            <div>
+              <h1 className="text-white font-bold text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] text-center max-w-[1440px] m-auto">
+                Lorem ipsum dolor sit amet.
+              </h1>
+              <div className="text-white text-center mt-4 text-[.7rem] md:text-[1rem] w-[100vw]">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis voluptate.
+              </div>
+              <div className="flex justify-center">
+                <div className="w-[80vw] md:w-[700px] lg:w-[800px] 2xl:w-[900px] mt-8 md:mt-12 lg:mt-16">
+                  <form action="submit">
+                    <div className="flex flex-col justify-center md:flex-row gap-8 mt-8 w-[100%]">
+                      <div className="md:w-[50%] w-[100%]">
+                        <div className="text-white mb-4">Name</div>
+                        <input
+                          value={contactDetails.name}
+                          onChange={(e) =>
+                            setContactDetails({
+                              ...contactDetails,
+                              name: e.target.value,
+                            })
+                          }
+                          className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-6 outline-none text-white"
+                          type="text"
+                          placeholder="Joseph"
+                        />
+                      </div>
+                      <div className="md:w-[50%] w-[100%]">
+                        <div className="text-white mb-4">Email</div>
+                        <input
+                          value={contactDetails.email}
+                          onChange={(e) =>
+                            setContactDetails({
+                              ...contactDetails,
+                              email: e.target.value,
+                            })
+                          }
+                          className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-6 outline-none text-white"
+                          type="gmail"
+                          placeholder="Joseph@gmail.com"
+                        />
+                      </div>
                     </div>
-                    <div className='flex flex-col justify-center mt-8'>
-                        <div className='text-white mb-4'>Message</div>
-                        <textarea name="message"
-                            type="text"
-                            value={contactDetails.message}
-                            onChange={(e) => setContactDetails({...contactDetails, message: e.target.value})}
-                            className='w-[100%] h-[12rem] rounded-md pt-6 pl-6 bg-[#333] resize-none text-white outline-none' 
-                            placeholder='Enter a message'
-                        ></textarea>
+                    <div className="flex flex-col justify-center mt-8">
+                      <div className="text-white mb-4">Message</div>
+                      <textarea
+                        name="message"
+                        type="text"
+                        value={contactDetails.message}
+                        onChange={(e) =>
+                          setContactDetails({
+                            ...contactDetails,
+                            message: e.target.value,
+                          })
+                        }
+                        className="bg-white/[0.12] pt-6 border border-white/[0.11] h-[150px] md:h-[240px] rounded w-[100%] px-6 outline-none text-white"
+                        placeholder="Enter a message"
+                      ></textarea>
                     </div>
-                    <div className='flex justify-between items-center'>
-                        <div className='text-red-700'>{gmailError}</div>
-                        <button disabled={!formSubmit} className='bg-white text-black text-lg py-1 px-8 rounded-md mt-8 cursor-pointer hover:bg-gray-200'>Submit</button>
+                    <div className="flex justify-between items-center">
+                      <div className="text-red-700">{gmailError}</div>
+                      <button
+                        disabled={!formSubmit}
+                        className="bg-white text-black text-lg py-1 px-8 rounded-md mt-8 cursor-pointer hover:bg-gray-200"
+                      >
+                        Submit
+                      </button>
                     </div>
-                </form>
+                  </form>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
