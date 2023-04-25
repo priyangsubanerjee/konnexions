@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
+import NavBar from "../components/navbar";
 
 const Contact = () => {
   const [gmailError, setGmailError] = useState("");
@@ -27,6 +28,7 @@ const Contact = () => {
   }, [contactDetails]);
   return (
     <>
+      <NavBar />
       <div className="fixed inset-0 h-screen w-screen bg-black overflow-x-hidden">
         <div className="relative inset-0 h-screen w-screen overflow-x-hidden">
           <div className="h-[1000px] w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#6C63FF]/70 lg:from-[#6C63FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -52,7 +54,7 @@ const Contact = () => {
                         <div className="text-white mb-4">Name</div>
                         <input
                           value={contactDetails.name}
-                          onChange={(e) =>
+                          onChange={e =>
                             setContactDetails({
                               ...contactDetails,
                               name: e.target.value,
@@ -67,7 +69,7 @@ const Contact = () => {
                         <div className="text-white mb-4">Email</div>
                         <input
                           value={contactDetails.email}
-                          onChange={(e) =>
+                          onChange={e =>
                             setContactDetails({
                               ...contactDetails,
                               email: e.target.value,
@@ -85,7 +87,7 @@ const Contact = () => {
                         name="message"
                         type="text"
                         value={contactDetails.message}
-                        onChange={(e) =>
+                        onChange={e =>
                           setContactDetails({
                             ...contactDetails,
                             message: e.target.value,
