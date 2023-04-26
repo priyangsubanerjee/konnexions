@@ -32,7 +32,7 @@ const Contact = () => {
       <div className="fixed inset-0 h-screen w-screen bg-black overflow-x-hidden">
         <div className="relative inset-0 h-screen w-screen overflow-x-hidden">
           <div className="h-[1000px] w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#6C63FF]/70 lg:from-[#6C63FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-          <div className="absolute py-20 inset-0 h-screen w-screen z-30 overflow-y-auto overflow-x-hidden scrollbar-hide">
+          <div className="absolute py-32 inset-0 h-screen w-screen z-30 overflow-y-auto overflow-x-hidden scrollbar-hide">
             <img
               src="./images/mail.png"
               alt="mail"
@@ -42,19 +42,19 @@ const Contact = () => {
               <h1 className="text-white font-bold text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] text-center max-w-[1440px] m-auto">
                 Lorem ipsum dolor sit amet.
               </h1>
-              <div className="text-white text-center mt-4 text-[.7rem] md:text-[1rem] w-[100vw]">
+              <div className="text-white text-center mt-4 text-[.7rem] md:text-[1rem] w-[100vw] px-6 leading-7">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Corporis voluptate.
               </div>
               <div className="flex justify-center">
-                <div className="w-[80vw] md:w-[700px] lg:w-[800px] 2xl:w-[900px] mt-8 md:mt-12 lg:mt-16">
+                <div className="w-[90vw] md:w-[700px] lg:w-[800px] 2xl:w-[900px] mt-8 md:mt-12 lg:mt-10">
                   <form action="submit">
                     <div className="flex flex-col justify-center md:flex-row gap-8 mt-8 w-[100%]">
                       <div className="md:w-[50%] w-[100%]">
                         <div className="text-white mb-4">Name</div>
                         <input
                           value={contactDetails.name}
-                          onChange={e =>
+                          onChange={(e) =>
                             setContactDetails({
                               ...contactDetails,
                               name: e.target.value,
@@ -69,7 +69,7 @@ const Contact = () => {
                         <div className="text-white mb-4">Email</div>
                         <input
                           value={contactDetails.email}
-                          onChange={e =>
+                          onChange={(e) =>
                             setContactDetails({
                               ...contactDetails,
                               email: e.target.value,
@@ -87,7 +87,7 @@ const Contact = () => {
                         name="message"
                         type="text"
                         value={contactDetails.message}
-                        onChange={e =>
+                        onChange={(e) =>
                           setContactDetails({
                             ...contactDetails,
                             message: e.target.value,
