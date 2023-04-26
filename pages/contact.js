@@ -31,7 +31,7 @@ const Contact = () => {
       <NavBar />
       <div className="fixed inset-0 h-screen w-screen bg-black overflow-x-hidden">
         <div className="relative inset-0 h-screen w-screen overflow-x-hidden">
-          <div className="h-[1000px] w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#6C63FF]/70 lg:from-[#6C63FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+          <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#6C63FF]/60 lg:from-[#6C63FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-xl lg:blur-3xl"></div>
           <div className="absolute py-32 inset-0 h-screen w-screen z-30 overflow-y-auto overflow-x-hidden scrollbar-hide">
             <img
               src="./images/mail.png"
