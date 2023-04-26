@@ -101,7 +101,7 @@ const Contact = () => {
                       <div className="text-red-700">{gmailError}</div>
                       <button
                         disabled={!formSubmit}
-                        className="bg-white text-black text-lg py-1 px-8 rounded-md mt-8 cursor-pointer hover:bg-gray-200"
+                        className="bg-white text-sm text-black py-2 px-8 rounded-md mt-8 cursor-pointer hover:bg-gray-200"
                       >
                         Submit
                       </button>
