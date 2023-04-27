@@ -13,4 +13,138 @@ body {
   overflow-x: hidden;
 }
 
+.carousel {
+  overflow: hidden;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 490px;
+  background-color: #fff;
+}
+
+.carousel-item-text {
+  font-size: 1.15rem;
+  margin: 40px 0 40px 0;
+  padding: 0 20px 0 20px;
+  white-space: normal;
+  color: #617d98;
+}
+.carousel-img {
+  width: 250px;
+  padding: 0 20px 0 20px;
+}
+
+/* final stage */
+
+.carousel-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.indicators {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.indicator-buttons {
+  border: none;
+  cursor: pointer;
+}
+
+.indicators > button {
+  margin: 5px;
+  background: none;
+}
+
+.indicator-symbol {
+  color: #26343f;
+}
+
+.indicator-symbol-active {
+  color: #ffffff;
+}
+
+
+/* hide scrollbar in webkit browser */
+.carousel-content::-webkit-scrollbar, .carousel-content::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-content.show-1 > * {
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.carousel-content.show-2 > * {
+    width: 50%;
+}
+
+.carousel-content.show-3 > * {
+    width: calc(100% / 3);
+}
+
+.carousel-content.show-4 > * {
+    width: calc(100% / 4);
+}
+
+.carousel-content.show-5 > * {
+    width: calc(100% / 5);
+}
+
+.carousel-content.show-6 > * {
+    width: calc(100% / 6);
+}
+.carousel-content.show-7 > * {
+    width: calc(100% / 7);
+}
+
+.left-arrow, .right-arrow {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: transparent; 
+    border: 1px solid transparent;
+    margin-top: 10%;
+}
+
+.left-arrow {
+    left: 24px;
+}
+
+.right-arrow {
+    right: 24px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .left-arrow, .right-arrow {
+        display: none;
+    }
+}
 
