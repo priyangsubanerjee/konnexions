@@ -26,7 +26,7 @@ const TeamCard = ({ member }) => {
       {/* Right Border */}
       <div className="absolute right-2 h-[385px] w-[1.25px] bg-gradient-to-b from-[transparent] via-[#ffffffb5] to-[transparent] " />
 
-      <Image src={member.image} alt="" className="rounded object-contain"  />
+      <Image src={member.image} alt="" className="rounded object-contain" />
       <h3 className="text-2xl text-white font-medium text-center my-4">
         {member.name}
       </h3>
