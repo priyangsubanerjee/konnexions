@@ -1,120 +1,229 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import NavBar from '@/components/navbar'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import Link from "next/link";
+import NavBar from "@/components/navbar";
+import Carousel from "@/components/carousel";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <NavBar/>
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className="primary-header">
+        <div className="container fs-600 fw-medium pt-14 pb-0">
+          <NavBar />
+          <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute z-10 rounded-full bg-gradient-to-br from-[#0047D2]/60 lg:from-[#0047D2] to-transparent -translate-x-1/2 -translate-y-1/2 blur-xl lg:blur-3xl"></div>
         </div>
-      </div>
+      </header>
+      <main className="bg-black text-white overflow-hidden">
+        <section className="container pt-44 z-100">
+          <div className="flex flex-col">
+            <div>
+              <h1 className="fs-1000 fw-bold flex justify-center">
+                The IT & Web Society
+              </h1>
+              <p className="fs-675 fw-regular pt-14 flex justify-center">
+                Connect • Learn • Innovate
+              </p>
+              <div className="fs-650 fw-regular pt-16 translate-x-1/2 w-1/2 flex justify-center text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+                sequi neque labore maxime ratione accusamus magnam sed
+                assumenda, excepturi officia ex modi explicabo, illo laudantium
+                dolorum beatae, minus quisquam obcaecati.
+              </div>
+            </div>
+            <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute rounded-full bg-gradient-to-br from-[#0047D2]/60 lg:from-[#0047D2] to-transparent translate-x-3/4 translate-y-1/2 blur-xl lg:blur-3xl"></div>
+          </div>
+        </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <section className="pt-72 ">
+          <div className="">
+            <h2 className="fs-775 fw-semi-bold flex justify-center">
+              Our Services
+            </h2>
+            <p className="fs-600 fw-regular flex justify-center">
+              Lorem ipsum dolor sit.
+            </p>
+            <div className="container">
+              <div
+                style={{
+                  maxWidth: 1200,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  marginTop: 64,
+                }}
+                className="justify-items-center"
+              >
+                {/* <div>App Development</div>
+                <div>App Development</div>
+                <div>App Development</div> */}
+                <Carousel show={3} infiniteLoop={true}>
+                  <Image
+                    src="/example1.svg"
+                    alt="placeholder"
+                    width={50}
+                    height={50}
+                    className="px-8"
+                  />
+                  <Image
+                    src="/example2.svg"
+                    alt="placeholder"
+                    width={50}
+                    height={50}
+                    className="px-8"
+                  />
+                  <Image
+                    src="/example1.svg"
+                    alt="placeholder"
+                    width={50}
+                    height={50}
+                    className="px-8"
+                  />
+                  <Image
+                    src="/female.svg"
+                    alt="placeholder"
+                    width={50}
+                    height={50}
+                    className="px-8"
+                  />
+                  <Image
+                    src="/male.svg"
+                    alt="placeholder"
+                    width={50}
+                    height={50}
+                    className="px-8"
+                  />
+                  <div className="border px-64 w-64 h-80 rounded-t-lg text-black flex flex-col">
+                    <Image
+                      src="/favicon.ico"
+                      alt="placeholder"
+                      width={50}
+                      height={50}
+                      className="px-8"
+                    />
+                    <div>his iasdfasfdafsd</div>
+                  </div>
+                </Carousel>
+              </div>
+            </div>
+            <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute rounded-full bg-gradient-to-br from-[#B535B0]/60 lg:from-[#B535B0] to-transparent -translate-x-1/2 translate-y-1/3 blur-xl lg:blur-3xl"></div>
+          </div>
+        </section>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <section className="pt-72 flex justify-center">
+          <div className="container">
+            <h2 className="fs-775 fw-semi-bold flex justify-center">Events</h2>
+            <p className="fs-600 fw-regular flex justify-center">
+              Lorem ipsum dolor sit.
+            </p>
+            <div
+              style={{
+                maxWidth: 1200,
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: 64,
+              }}
+              className="justify-items-center"
+            ></div>
+            <Carousel show={3} infiniteLoop={true}>
+              <Image
+                src="/example1.svg"
+                alt="placeholder"
+                width={50}
+                height={50}
+                className="px-8"
+              />
+              <Image
+                src="/example2.svg"
+                alt="placeholder"
+                width={50}
+                height={50}
+                className="px-8"
+              />
+              <Image
+                src="/example1.svg"
+                alt="placeholder"
+                width={50}
+                height={50}
+                className="px-8"
+              />
+              <Image
+                src="/female.svg"
+                alt="placeholder"
+                width={50}
+                height={50}
+                className="px-8"
+              />
+              <Image
+                src="/male.svg"
+                alt="placeholder"
+                width={50}
+                height={50}
+                className="px-8"
+              />
+            </Carousel>
+          </div>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <section>
+          <div className="container my-72 pb-80">
+            <h2 className="fs-775 fw-semi-bold flex justify-center">
+              Newsletter
+            </h2>
+            <p className="fs-600 fw-regular flex justify-center pt-6 pb-28">
+              Lorem ipsum dolor sit.
+            </p>
+            <div className="container pt-16 bg-[#151515] rounded-lg z-100">
+              <div className="container flex flex-row justify-center flex-wrap">
+                <div className="flex flex-col justify-center">
+                  <div className="pb-8 text-3xl fw-semi-bold flex">
+                    Sign up for weekly newsletter
+                  </div>
+                  <div className="pb-10 w-1/2 fw-regular">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Soluta quod atque doloribus distinctio totam cum, ut fugit.
+                  </div>
+                  {/* <form action="" className="pb-20 flex justify-left bg-red-300">
+                    <input
+                      type="email"
+                      className="rounded-l-full w-1/3 h-16 border-slate-800 border bg-[#151515]"
+                    />
+                    <button className="rounded-full text-center text-base px-1">
+                      <div className="-ml-6 h-16 pl-20 fw-medium text-black bg-white rounded-r-full flex items-center text-center text-base">
+                      <span className="-ml-16">
+                        Register
+ 
+                      </span>
+                      
+                      </div>
+                    </button>
+                  </form> */}
+                  <div className="mb-20 flex items-center justify-center overflow-hidden  bg-white rounded-full border w-1/2 z-50">
+                    {/* <form action=""> */}
+                    <input
+                      type="email"
+                      className="bg-transparent outline-none py-4 text-base text-black border  border-green-400 w-full"
+                    />
+                    {/* </form> */}
+                    <div className="bg-[#151515] flex items-center px-4 text-white border border-white h-full hover:bg-blue-500 ease-in-out duration-300">
+                      <button className="cursor-pointer">Register</button>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <Image
+                    src=""
+                    alt="newsletter"
+                    width={100}
+                    height={100}
+                  ></Image>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute rounded-full bg-gradient-to-br from-[#0D5B52]/60 lg:from-[#0D5B52] to-transparent translate-x-3/4 -translate-y-1/2 blur-xl lg:blur-3xl"></div>
+        </section>
+      </main>
+    </>
+  );
 }
