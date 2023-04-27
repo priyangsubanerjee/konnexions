@@ -12,14 +12,14 @@ export default function Home() {
         <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute z-0 rounded-full bg-gradient-to-br from-[#0057FF]/60 lg:from-[#0057FF] to-transparent -translate-x-1/2 -translate-y-1/2 blur-xl lg:blur-3xl opacity-70"></div>
         <img
           src="/circleHome1.png"
-          className="absolute right-0 top-56 h-[600px] opacity-70"
+          className="absolute right-0 top-[500px] lg:top-56 h-[600px] opacity-70"
           alt=""
         />
-        <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute right-0 top-28 z-0 rounded-full bg-gradient-to-l from-[#0057FF]/60 lg:from-[#0057FF] to-transparent translate-x-[60%] blur-xl lg:blur-3xl opacity-50"></div>
-        <div className="h-[600px] lg:h-[1700px] w-[600px] lg:w-[1700px] absolute top-[1000px] left-0 z-0 rounded-full bg-gradient-to-r from-[#B535B0]/30 lg:from-[#B535B0]/40 to-transparent -translate-x-[50%] blur-xl lg:blur-3xl"></div>
+        <div className="h-[800px] lg:h-[1000px] w-[800px] lg:w-[1000px] absolute right-0 top-[600px] lg:top-28 z-0 rounded-full bg-gradient-to-l from-[#0057FF]/60 lg:from-[#0057FF] to-transparent translate-x-[60%] blur-xl lg:blur-3xl opacity-50"></div>
+        <div className="h-[600px] lg:h-[1700px] w-[600px] lg:w-[1700px] absolute top-[2200px] lg:top-[1000px] left-0 z-0 rounded-full bg-gradient-to-r from-[#B535B0]/30 lg:from-[#B535B0]/40 to-transparent -translate-x-[50%] blur-xl lg:blur-3xl"></div>
         <img
           src="/landingCalendar.png"
-          className="absolute left-0 top-[1600px] h-[400px] lg:h-[400px]"
+          className="absolute left-0 top-[2000px] lg:top-[1600px] h-[400px] lg:h-[400px]"
           alt=""
         />
         <div className="absolute inset-0 z-20">
@@ -50,8 +50,8 @@ export default function Home() {
               Lorem ipsum dolor sit amet
             </p>
 
-            <div className="grid grid-cols-1 gap-y-5 place-content-center place-items-center lg:flex justify-center w-full mt-16 lg:space-x-8">
-              <div className="relative w-[220px] h-[290px]  lg:w-[250px] lg:h-[315px] backdrop-blur">
+            <div className="grid grid-cols-2 gap-x-0 gap-y-2 place-content-center place-items-center lg:flex justify-center w-full mt-16 lg:space-x-8 px-2">
+              <div className="relative w-[170px] h-[220px] lg:w-[250px] lg:h-[315px] backdrop-blur">
                 <img
                   src="/servicesRectangle.png"
                   alt=""
@@ -74,13 +74,15 @@ export default function Home() {
                       />
                     </svg>
                   </i>
-                  <h2 className="mt-8 font-medium text-lg">App Development</h2>
-                  <p className="text-sm font-light opacity-70 mt-3">
+                  <h2 className="mt-4 font-semibold text-sm lg:text-lg">
+                    App Development
+                  </h2>
+                  <p className="text-xs lg:text-sm font-light opacity-70 mt-3">
                     10+ Projects
                   </p>
                 </div>
               </div>
-              <div className="relative w-[220px] h-[290px]  lg:w-[250px] lg:h-[315px] backdrop-blur">
+              <div className="relative w-[170px] h-[220px] lg:w-[250px] lg:h-[315px] backdrop-blur">
                 <img
                   src="/servicesRectangle.png"
                   alt=""
@@ -103,13 +105,15 @@ export default function Home() {
                       />
                     </svg>
                   </i>
-                  <h2 className="mt-8 font-medium text-lg">App Development</h2>
-                  <p className="text-sm font-light opacity-70 mt-3">
+                  <h2 className="mt-4 font-semibold text-sm lg:text-lg">
+                    App Development
+                  </h2>
+                  <p className="text-xs lg:text-sm font-light opacity-70 mt-3">
                     10+ Projects
                   </p>
                 </div>
               </div>
-              <div className="relative w-[220px] h-[290px]  lg:w-[250px] lg:h-[315px] backdrop-blur">
+              <div className="relative w-[170px] h-[220px] lg:w-[250px] lg:h-[315px] backdrop-blur">
                 <img
                   src="/servicesRectangle.png"
                   alt=""
@@ -132,8 +136,10 @@ export default function Home() {
                       />
                     </svg>
                   </i>
-                  <h2 className="mt-8 font-medium text-lg">App Development</h2>
-                  <p className="text-sm font-light opacity-70 mt-3">
+                  <h2 className="mt-4 font-semibold text-sm lg:text-lg">
+                    App Development
+                  </h2>
+                  <p className="text-xs lg:text-sm font-light opacity-70 mt-3">
                     10+ Projects
                   </p>
                 </div>
@@ -189,6 +195,35 @@ export default function Home() {
                   </button>
                   <span className="text-white text-xs">20th June 2021</span>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="min-h-screen flex flex-col justify-center">
+            <h1 className="text-center mt-44 lg:mt-0 text-white text-3xl lg:text-[44px] font-bold">
+              News letter
+            </h1>
+
+            <p className="text-center text-white leading-[2.9] lg:px-[300px] mt-4">
+              Lorem ipsum dolor sit amet
+            </p>
+
+            <div className="lg:h-96 bg-[#151515] w-[90%] lg:w-[70%] mx-auto rounded-2xl mt-16 lg:flex items-center">
+              <div className="lg:w-[50%] p-7 lg:p-10">
+                <h1 className="text-2xl text-white font-bold leading-10">
+                  Signup for the weekly newsletter.
+                </h1>
+                <p className="text-white/50 leading-7 text-sm font-light mt-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae ea vero nemo aspernatur neque nam quam consectetur.
+                </p>
+                <div className="lg:w-[400px] h-12 border border-white/40 rounded-full flex items-center mt-10 px-2">
+                  <button className="bg-[#343434] py-2 px-5 text-xs text-white/70 rounded-full ml-auto">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <div className="w-[50%] hidden lg:flex items-center justify-center p-10">
+                <img src="/newsLetterLanding.png" className="h-44" alt="" />
               </div>
             </div>
           </div>
