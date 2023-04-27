@@ -34,7 +34,7 @@ const teams = () => {
   return (
     <div className="relative flex flex-col overflow-hidden bg-[black] ">
       <NavBar />
-      <div className="flex flex-col justify-center realtive items-center">
+      <div className="flex flex-col justify-center relative items-center">
         <div className="h-[1000px] w-[1000px] absolute z-10 -left-5 -top-10 rounded-full bg-gradient-to-br from-[#1E9688]/70 lg:from-[#1E9688] to-transparent -translate-x-1/2 -translate-y-1/2 blur-[100px]" />
         <div className="h-[700px] w-[700px] absolute z-10 left-[100%] right-0 top-[10%] lg:top-[25%] rounded-full bg-gradient-to-br from-[#515151]/70 lg:from-[#515151]/40 to-transparent -translate-x-1/2 -translate-y-1/2 blur-3xl" />
         <Image

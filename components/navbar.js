@@ -6,7 +6,7 @@ function NavBar() {
   const [sidenavOpen, setSidenavOpen] = useState(false);
   return (
     <div>
-      <nav className="sticky z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
+      <nav className="fixed z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
         <div>
           <h1 className="text-white font-semibold text-2xl lg:text-3xl">
             Logo
