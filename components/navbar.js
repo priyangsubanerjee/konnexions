@@ -14,36 +14,16 @@ function NavBar() {
         </div>
         <ul className="hidden md:flex items-center space-x-16">
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link
-              href="/ProjectsAndAchievements"
-              onClick={() => setNavbar(!navbar)}
-            >
-              Home
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link
-              href="/ProjectsAndAchievements"
-              onClick={() => setNavbar(!navbar)}
-            >
-              Team
-            </Link>
+            <Link href="/team">Team</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link
-              href="/ProjectsAndAchievements"
-              onClick={() => setNavbar(!navbar)}
-            >
-              Projects & Achievemets
-            </Link>
+            <Link href="/">Projects & Achievemets</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link
-              href="/ProjectsAndAchievements"
-              onClick={() => setNavbar(!navbar)}
-            >
-              Contact us
-            </Link>
+            <Link href="/contact">Contact us</Link>
           </li>
         </ul>
         <div>
