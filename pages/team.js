@@ -1,7 +1,6 @@
 import React from "react";
 import image1 from "/public/image1.png";
 import TeamCard from "@/components/TeamCard";
-import Header from "@/Layout/Header";
 import Polygon_1 from "/public/Polygon_1.svg";
 import Polygon_2 from "/public/Polygon_2.svg";
 import Image from "next/image";
