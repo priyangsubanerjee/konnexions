@@ -32,7 +32,7 @@ const teams = () => {
   const dummyDatas = new Array(6).fill(member);
 
   return (
-    <div className="relative flex flex-col overflow-hidden bg-[black] ">
+    <div className="relative flex flex-col h-screen overflow-auto bg-[black] scrollbar-hide">
       <NavBar />
       <div className="flex flex-col justify-center relative items-center">
         <div className="h-[1000px] w-[1000px] absolute z-10 -left-5 -top-10 rounded-full bg-gradient-to-br from-[#1E9688]/70 lg:from-[#1E9688] to-transparent -translate-x-1/2 -translate-y-1/2 blur-[100px]" />
