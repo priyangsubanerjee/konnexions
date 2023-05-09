@@ -12,7 +12,7 @@ export default function Home() {
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-y-auto overflow-x-hidden scrollbar-hide">
       <NavBar />
       <img
-        src="/landingGradient_1R.png"
+        src="/landingGradient_1.png"
         alt=""
         className="absolute top-0 left-0 bg-transparent h-full w-full lg:-translate-x-[10%] lg:h-auto lg:w-auto"
       />
