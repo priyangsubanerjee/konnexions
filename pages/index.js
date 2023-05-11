@@ -107,6 +107,38 @@ export default function Home() {
               <EventsCard />
             </div>
           </div>
+          <div className="mt-56">
+            <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
+              Newsletter
+            </h1>
+            <p className="text-white/70 text-sm text-center mt-3">
+              Lorem ipsum dolor sit amet
+            </p>
+            <div className="w-full lg:w-[70%] mt-10 h-fit mx-auto bg-[#151515] grid grid-cols-1 lg:grid-cols-2 rounded-lg lg:rounded-2xl">
+              <div className="p-5 lg:p-10">
+                <h1 className="text-lg text-white font-semibold">
+                  Signup for the weekly newsletter.
+                </h1>
+                <p className="text-white/70 text-sm leading-6 mt-3">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae ea vero nemo aspernatur neque nam quam consectetur.
+                </p>
+                <div className="items-center mt-7">
+                  <input
+                    type="text"
+                    placeholder="abc@gmail.com"
+                    className="outline-none text-white bg-white/10 py-3 px-3 w-full rounded-md"
+                  />
+                  <button className="text-black bg-white/60 w-full text-center py-3 rounded-md mt-4 text-sm">
+                    Submit
+                  </button>
+                </div>
+              </div>
+              <div className="flex items-center justify-center w-full">
+                <img src="/mail.png" className="hidden lg:block h-44" alt="" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
