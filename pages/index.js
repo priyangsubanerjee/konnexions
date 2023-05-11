@@ -28,6 +28,11 @@ export default function Home() {
           className="absolute top-[400px] lg:top-[200px] left-0 bg-transparent h-[1700px] w-[1700px] lg:h-[2200px] lg:w-[2200px] lg:-translate-x-[10%] -translate-x-[5%]"
         />
         <img
+          src="/landingGradient_4.png"
+          alt=""
+          className="absolute top-[2200px] lg:top-[1000px] right-0 bg-transparent h-[1700px] w-[1700px] lg:h-[2200px] lg:w-[2200px] lg:translate-x-[10%] translate-x-[5%]"
+        />
+        <img
           src="/calendar.png"
           alt=""
           className="absolute object-contain top-[1000px] lg:top-[900px] left-0 bg-transparent h-[300px] w-[300px] lg:h-[500px] lg:w-[500px] lg:-translate-x-[30%] -translate-x-[30%]"
@@ -119,7 +124,7 @@ export default function Home() {
                 <h1 className="text-lg text-white font-semibold">
                   Signup for the weekly newsletter.
                 </h1>
-                <p className="text-white/70 text-sm leading-6 mt-3">
+                <p className="text-white/70 text-xs leading-6 mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Beatae ea vero nemo aspernatur neque nam quam consectetur.
                 </p>

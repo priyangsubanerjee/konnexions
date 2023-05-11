@@ -83,7 +83,7 @@ function NavBar() {
               <Link href="/ProjectsAndAchievements">Home</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/ProjectsAndAchievements">Team</Link>
+              <Link href="/team">Team</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
               <Link href="/ProjectsAndAchievements">
