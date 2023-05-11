@@ -20,7 +20,7 @@ export default function Home() {
         <img
           src="/landingGradient_2.png"
           alt=""
-          className="absolute top-32 lg:top-0 right-0 bg-transparent h-full w-full lg:h-[1000px] lg:w-[1000px] lg:translate-x-[20%] translate-x-[10%]"
+          className="absolute top-0 lg:top-0 right-0 bg-transparent h-full w-full lg:h-[1000px] lg:w-[1000px] lg:translate-x-[20%] translate-x-[10%]"
         />
         <img
           src="/landingGradient_3.png"
@@ -28,13 +28,18 @@ export default function Home() {
           className="absolute top-[400px] lg:top-[200px] left-0 bg-transparent h-[1700px] w-[1700px] lg:h-[2200px] lg:w-[2200px] lg:-translate-x-[10%] -translate-x-[5%]"
         />
         <img
+          src="/calendar.png"
+          alt=""
+          className="absolute object-contain top-[1000px] lg:top-[900px] left-0 bg-transparent h-[300px] w-[300px] lg:h-[500px] lg:w-[500px] lg:-translate-x-[30%] -translate-x-[30%]"
+        />
+        <img
           src="/outlineCircleLanding.png"
           alt=""
           className="absolute top-24 lg:top-0 -right-6 bg-transparent h-[600px] lg:h-[800px]"
         />
-        <div className="absolute z-10 h-fit w-full pt-44 pb-28 lg:pt-44 px-6 lg:px-24">
+        <div className="absolute z-10 h-fit w-full pt-32 pb-28 lg:pt-44 px-6 lg:px-24">
           <div>
-            <h1 className="text-center text-white text-2xl lg:text-6xl font-bold lg:font-extrabold leading-[1.6]">
+            <h1 className="text-center text-white text-3xl lg:text-6xl font-bold lg:font-extrabold leading-[1.6]">
               Lorem ipsum dolor sit amet.
             </h1>
             <div className="flex items-center space-x-6 justify-center text-white text-sm lg:text-xl mt-7 lg:mt-16">
