@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="mt-56">
             <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
-              Newsletter
+              News letter
             </h1>
             <p className="text-white/70 text-sm text-center mt-3">
               Lorem ipsum dolor sit amet
