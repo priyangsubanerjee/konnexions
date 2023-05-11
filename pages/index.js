@@ -88,7 +88,7 @@ export default function Home() {
             <p className="text-white/70 text-sm text-center mt-3">
               Lorem ipsum dolor sit amet
             </p>
-            <div className="place-content-center place-items-center grid grid-cols-2 lg:flex items-center justify-center lg:space-x-7 mt-10">
+            <div className="place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-10">
               <ServicesCard />
               <ServicesCard />
               <ServicesCard />
