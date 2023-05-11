@@ -80,18 +80,16 @@ function NavBar() {
           </div>
           <ul className="px-6 text-center space-y-12 mt-16">
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/ProjectsAndAchievements">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
               <Link href="/team">Team</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/ProjectsAndAchievements">
-                Projects & Achievemets
-              </Link>
+              <Link href="/projects">Projects & Achievemets</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/ProjectsAndAchievements">Contact us</Link>
+              <Link href="/contact">Contact us</Link>
             </li>
           </ul>
         </div>

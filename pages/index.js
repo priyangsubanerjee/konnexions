@@ -10,7 +10,9 @@ import Link from "next/link";
 
 export async function getServerSideProps() {
   const resp = await axios.get(
-    "https://konnexions-vbc.vercel.app//api/landing"
+    process.env.NODE_ENV == "production"
+      ? "https://konnexions-vbc.vercel.app//api/landing"
+      : "http://localhost:3000/api/landing"
   );
 
   return {
