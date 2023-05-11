@@ -116,6 +116,11 @@ const teams = () => {
           className="absolute top-44 right-0 bg-transparent h-full w-full lg:translate-x-[10%] lg:h-[1000px] lg:w-[1000px]"
         />
         <img
+          src="/teamGradient_4.png"
+          alt=""
+          className="absolute top-[1500px] right-0 bg-transparent h-full w-full lg:translate-x-[10%] lg:h-[1000px] lg:w-[1000px]"
+        />
+        <img
           src="/teamPolygon.png"
           alt=""
           className="absolute top-20 right-0 bg-transparent object-contain h-[500px] w-[500px] lg:translate-x-[20%] translate-x-[30%]"
