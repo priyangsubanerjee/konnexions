@@ -30,13 +30,13 @@ const TeamCard = ({ member }) => {
       <h3 className="text-2xl text-white font-medium text-center my-4">
         {member.name}
       </h3>
-      <div className="flex flex-row">
-        <div className="h-[1.6px] w-14 my-auto bg-gradient-to-r from-[#ffffffb5] to-[transparent]" />
+      <div className="flex flex-row justify-between w-full px-2">
+        <div className="h-[1.6px] w-12 my-auto bg-gradient-to-r from-[#ffffff67] to-[transparent]" />
 
         <div className="bg-card_bg px-4 p-1 text-xs rounded mx-1">
           <span className="text-white font-medium">{member.type}</span>
         </div>
-        <div className="h-[1.6px] w-16 my-auto bg-gradient-to-r from-[transparent] to-[#ffffffb5]" />
+        <div className="h-[1.6px] w-12 my-auto bg-gradient-to-r from-[transparent] to-[#ffffff67]" />
       </div>
       <div className="flex flex-row justify-center items-center mt-4">
         {member.socials.map((social, i) => (
