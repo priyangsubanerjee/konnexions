@@ -135,7 +135,7 @@ export default function Home({ data }) {
             </p>
             <div className="w-full lg:w-[70%] mt-10 h-fit mx-auto bg-[#151515] grid grid-cols-1 lg:grid-cols-2 rounded-lg lg:rounded-2xl">
               <div className="p-5 lg:p-10">
-                <h1 className="text-lg text-white font-semibold">
+                <h1 className="text-lg lg:text-2xl text-white font-semibold">
                   Signup for the weekly newsletter.
                 </h1>
                 <p className="text-white/70 text-xs leading-6 mt-3">
