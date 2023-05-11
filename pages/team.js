@@ -141,7 +141,6 @@ const teams = () => {
             </div>
             <div className="grid grid-cols-1 gap-5 lg:flex lg:justify-center lg:space-x-5 place-items-center mt-16">
               <TeamCard member={member} />
-              <TeamCard member={member} />
             </div>
           </div>
 
@@ -154,6 +153,7 @@ const teams = () => {
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
             <div className="grid grid-cols-1 gap-5 lg:flex lg:justify-center lg:space-x-5 place-items-center mt-16">
+              <TeamCard member={member} />
               <TeamCard member={member} />
               <TeamCard member={member} />
             </div>

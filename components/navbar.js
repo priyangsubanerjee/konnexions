@@ -20,7 +20,7 @@ function NavBar() {
             <Link href="/team">Team</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link href="/">Projects & Achievemets</Link>
+            <Link href="/projects">Projects & Achievemets</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
             <Link href="/contact">Contact us</Link>
