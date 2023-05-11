@@ -9,7 +9,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export async function getServerSideProps() {
-  const resp = await axios.get("http://localhost:3000/api/landing");
+  const resp = await axios.get(
+    "https://konnexions-vbc.vercel.app//api/landing"
+  );
 
   return {
     props: {
