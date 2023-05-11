@@ -3,11 +3,22 @@ import EventsCard from "@/components/EventsCard";
 import ServicesCard from "@/components/ServicesCard";
 import SnapBox from "@/components/SnapBox";
 import NavBar from "@/components/navbar";
+import axios from "axios";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export async function getServerSideProps() {
+  const resp = await axios.get("http://localhost:3000/api/landing");
+
+  return {
+    props: {
+      data: resp.data.data,
+    },
+  };
+}
+
+export default function Home({ data }) {
   return (
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-hidden scrollbar-hide">
       <NavBar />
@@ -45,23 +56,22 @@ export default function Home() {
         <div className="absolute z-10 h-fit w-full pt-32 pb-28 lg:pt-44 px-6 lg:px-24">
           <div>
             <h1 className="text-center text-white text-3xl lg:text-6xl font-bold lg:font-extrabold leading-[1.6]">
-              Lorem ipsum dolor sit amet.
+              {data.heading1}
             </h1>
             <div className="flex items-center space-x-6 justify-center text-white text-sm lg:text-xl mt-7 lg:mt-16">
-              <span>Lorem</span>
-              <span>•</span>
-              <span>Ipsum</span>
-              <span>•</span>
-              <span>Lorem</span>
+              {data.arrayFeat.map((item, index) => {
+                return (
+                  <>
+                    <span>{item}</span>
+                    {index !== data.arrayFeat.length - 1 && (
+                      <span className="text-white/70">•</span>
+                    )}
+                  </>
+                );
+              })}
             </div>
             <div className="lg:px-44 text-xs text-white text-center mt-10 lg:mt-16 leading-8 lg:leading-10">
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores modi deserunt facere. Quam, accusamus iste placeat sit
-                odio voluptatem ea quibusdam nobis non nulla excepturi
-                blanditiis libero optio incidunt nihil! Lorem ipsum dolor, sit
-                amet consectetur adipisicing elit. Laborum, cumque?
-              </p>
+              <p>{data.description}</p>
             </div>
             <div className="flex items-center justify-center mt-16">
               <div className="h-16 hover:bg-white/5 border border-white/20 rounded-lg flex items-center px-2 transition-all cursor-pointer">
