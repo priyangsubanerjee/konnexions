@@ -94,6 +94,19 @@ export default function Home() {
               <ServicesCard />
             </div>
           </div>
+          <div className="mt-56">
+            <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
+              Events
+            </h1>
+            <p className="text-white/70 text-sm text-center mt-3">
+              Lorem ipsum dolor sit amet
+            </p>
+            <div className="place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center lg:space-x-7 mt-10">
+              <EventsCard />
+              <EventsCard />
+              <EventsCard />
+            </div>
+          </div>
         </div>
       </div>
     </div>
