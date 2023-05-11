@@ -7,12 +7,8 @@ export default async function handler(req, res) {
     query LandingPages {
       landingPages {
         arrayFeat
-        createdAt
         description
         heading1
-        id
-        publishedAt
-        updatedAt
       }
     }
   `;
