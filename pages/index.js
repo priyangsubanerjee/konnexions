@@ -19,7 +19,7 @@ export default function Home() {
       <img
         src="/landingGradient_2.png"
         alt=""
-        className="absolute top-32 lg:top-0 translate-x-1/2 right-1/2 bg-transparent h-full w-full lg:h-auto lg:w-auto"
+        className="absolute top-32 lg:top-0 right-0 bg-transparent h-full w-full lg:h-[1000px] lg:w-[1000px] lg:translate-x-[20%] translate-x-[10%]"
       />
       <img
         src="/outlineCircleLanding.png"
@@ -48,7 +48,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex items-center justify-center mt-16">
-            <div className="h-16 hover:bg-white/5 border border-white/20 rounded-lg flex items-center px-2 transition-all">
+            <div className="h-16 hover:bg-white/5 border border-white/20 rounded-lg flex items-center px-2 transition-all cursor-pointer">
               <div className="h-12 w-12 relative">
                 <img
                   src="/calendarIcon.png"
@@ -59,8 +59,7 @@ export default function Home() {
                   12
                 </div>
               </div>
-
-              <div className="ml-4">
+              <div className="ml-4 mr-4">
                 <h1 className="text-white font-semibold text-sm">
                   Happening now event name
                 </h1>
@@ -71,6 +70,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div></div>
       </div>
     </div>
   );
