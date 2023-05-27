@@ -9,6 +9,15 @@ export default async function handler(req, res) {
         arrayFeat
         description
         heading1
+        services {
+          name
+          icon {
+            url
+          }
+          projects {
+            id
+          }
+        }
       }
     }
   `;

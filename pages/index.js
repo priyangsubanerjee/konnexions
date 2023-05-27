@@ -11,7 +11,7 @@ import Link from "next/link";
 export async function getServerSideProps() {
   const resp = await axios.get(
     process.env.NODE_ENV == "production"
-      ? "https://konnexions-vbc.vercel.app//api/landing"
+      ? "https://konnexions-vbc.vercel.app/api/landing"
       : "http://localhost:3000/api/landing"
   );
 
@@ -108,9 +108,9 @@ export default function Home({ data }) {
               Lorem ipsum dolor sit amet
             </p>
             <div className="place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-10">
-              <ServicesCard />
-              <ServicesCard />
-              <ServicesCard />
+              {data.services.map((item, i) => {
+                return <ServicesCard data={item} key={i} />;
+              })}
             </div>
           </div>
           <div className="mt-56">
