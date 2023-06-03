@@ -16,7 +16,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="flex bg-transparent backdrop-blur text-white text-sm lg:text-base inset-x-0 z-30">
+    <footer className="flex bg-transparent backdrop-blur text-white text-sm lg:text-base inset-x-0 z-30 flex-shrink-0 flex-grow-0">
       <div className="container mx-auto px-6 lg:py-6 py-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-row space-x-4">
