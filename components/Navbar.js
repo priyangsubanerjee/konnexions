@@ -43,7 +43,7 @@ export default function NavBar() {
       </div>
       <ul className="hidden md:flex items-center space-x-16 ml-auto">
         {tabs.map(tab => { return (
-          <li className="text-white/70 hover:text-white text-sm transition-all">
+          <li key={tab.name} className="text-white/70 hover:text-white text-sm transition-all">
             <Link href={tab.link}>{tab.name}</Link>
           </li> )}
         )}
@@ -102,7 +102,7 @@ export default function NavBar() {
         </div>
         <ul className="px-6 text-center space-y-12 mt-16">
           {tabs.map(tab => { return (
-            <li className="text-white/70 hover:text-white text-2xl transition-all">
+            <li key={tab.name} className="text-white/70 hover:text-white text-2xl transition-all">
               <Link href={tab.link}>{tab.name}</Link>
             </li> )}
           )}
