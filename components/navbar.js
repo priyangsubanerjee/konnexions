@@ -31,14 +31,14 @@ export default function NavBar() {
   return (<>
     <nav className="fixed z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
       <div className="flex items-center space-x-5 text-white text-sm lg:text-xl">
+        <Link href="https://kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
+          <img src={data.kiit.url} alt="kiit" className="w-full h-auto" />
+        </Link>
         <Link href="/" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
           <img src={data.konnexion.url} alt="konnexions" className="w-full h-auto" />
         </Link>
         <Link href="https://ksac.kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
           <img src={data.ksac.url} alt="ksac" className="w-full h-auto" />
-        </Link>
-        <Link href="https://kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
-          <img src={data.kiit.url} alt="kiit" className="w-full h-auto" />
         </Link>
       </div>
       <ul className="hidden md:flex items-center space-x-16 ml-auto">
@@ -102,7 +102,7 @@ export default function NavBar() {
         </div>
         <ul className="px-6 text-center space-y-12 mt-16">
           {tabs.map(tab => { return (
-            <li key={tab.name} className="text-white/70 hover:text-white text-2xl transition-all">
+            <li key={tab.name} className="text-white/70 hover:text-white text-2xl transition-all" onClick={() => setSidenavOpen(false)}>
               <Link href={tab.link}>{tab.name}</Link>
             </li> )}
           )}
