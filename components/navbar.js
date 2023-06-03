@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function NavBar() {
   const [sidenavOpen, setSidenavOpen] = useState(false);
@@ -8,14 +9,13 @@ export default function NavBar() {
   useEffect(() => {
     const fetchData = async () => {
       if (data) return;
-      const resp = await fetch(
+      const resp = await axios.get(
         process.env.NODE_ENV == "production"
           ? "https://konnexions.netlify.app/api/logos"
           : "http://localhost:3000/api/logos"
       );
-      const json = await resp.json();
-      setData(json.data);
-    };
+      setData(resp.data.data);
+    }
     fetchData();
   }, [data]);
 

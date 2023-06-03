@@ -1,9 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
-import ResourcesCard from "@/components/ResourcesCard";
 import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import ResourcesCard from "@/components/ResourcesCard";
 import Head from "next/head";
 
 export default function Resources() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (data) return;
+      const resp = await axios.get(
+        process.env.NODE_ENV == "production"
+          ? "https://konnexions.netlify.app/api/resource"
+          : "http://localhost:3000/api/resource"
+      );
+      setData(resp.data.data);
+    }
+    fetchData();
+  }, [data]);
+
+  if (!data) return null;
+
   return (
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Resources</title></Head>
@@ -20,11 +39,10 @@ export default function Resources() {
         />
         <div className="absolute z-10 h-fit w-full pt-32 pb-28 lg:pt-44 px-6 lg:px-24">
           <h1 className="text-center text-white text-2xl lg:text-5xl font-bold lg:font-extrabold leading-[1.6]">
-            Lorem ipsum dolor sit amet.
+            {data.heading}
           </h1>
           <p className="lg:px-44 text-xs lg:text-sm mt-5 lg:mt-7 text-white/70 text-center leading-8 lg:leading-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
-            vero nemo aspernatur
+            {data.description}
           </p>
           <div className="flex items-center justify-center space-x-8 lg:space-x-16 mt-20">
             <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white/50"></div>
@@ -33,10 +51,10 @@ export default function Resources() {
             </span>
             <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white/50"></div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 mt-16 lg:w-[700px] lg:mx-auto">
-            <ResourcesCard />
-            <ResourcesCard />
-            <ResourcesCard />
+          <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-4">
+            {data.resource.map((item, index) => {
+              return <ResourcesCard key={index} resource={item} />;
+            })}
           </div>
         </div>
       </div>

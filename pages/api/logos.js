@@ -2,7 +2,7 @@
 
 import { client, gql } from "@/graph";
 
-export default async function handler(req, res) {
+const handler = async(req, res) => {
   const query = gql`
     query Logos {
       logos {
@@ -18,15 +18,18 @@ export default async function handler(req, res) {
       }
     }
   `;
-  try {
-    const { logos } = await client.request(query);
+  
+  await client.request(query).then((data) => {
+    console.log(data);
     res.status(200).json({
-      data: logos[0],
+      data: data.logos[0],
     });
-  } catch (error) {
-    console.log(error);
+  }).catch((err) => {
+    console.log(err);
     res.status(500).json({
-      error: error,
+      error: err,
     });
-  }
+  });
 }
+
+export default handler;

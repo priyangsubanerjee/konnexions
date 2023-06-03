@@ -1,32 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import image1 from "/public/image1.png";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import MemberCard from "@/components/MemberCard";
 import Head from "next/head";
 
 const teams = () => {
-  const member = {
-    name: "Jhon Doe",
-    image: image1,
-    type: "DevOps Lead",
-    socials: [
-      {
-        name: "Linkedin",
-        link: "https://www.linkedin.com/in/abhishek-kumar-0a6b3b1b2/",
-      },
+  const [data, setData] = useState(null);
 
-      {
-        name: "Github",
-        link: "https://www.linkedin.com/in/abhishek-kumar-0a6b3b1b2/",
-      },
-      {
-        name: "Instagram",
-        link: "https://www.linkedin.com/in/abhishek-kumar-0a6b3b1b2/",
-      },
-    ],
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      if (data) return;
+      const resp = await axios.get(
+        process.env.NODE_ENV == "production"
+          ? "https://konnexions.netlify.app/api/member"
+          : "http://localhost:3000/api/member"
+      );
+      setData(resp.data.data);
+    }
+    fetchData();
+  }, [data]);
 
-  const dummyDatas = new Array(6).fill(member);
+  if (!data) return null;
 
   return (    
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
@@ -54,35 +49,65 @@ const teams = () => {
         />
         <div className="absolute z-10 h-fit w-full pt-32 pb-28 lg:pt-44 px-6 lg:px-24">
           <h1 className="text-center text-white text-2xl lg:text-5xl font-bold lg:font-extrabold leading-[1.6]">
-            Lorem ipsum dolor sit amet.
+            {data.heading}
           </h1>
           <p className="lg:px-44 text-xs lg:text-sm mt-5 lg:mt-7 text-white/70 text-center leading-8 lg:leading-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea
-            vero nemo aspernatur
+            {data.description}
           </p>
+
           <div className="mt-36">
             <div className="flex items-center justify-center space-x-8 lg:space-x-16">
               <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white"></div>
-              <span className="text-white text-xl font-medium">Leads</span>
+              <span className="text-white text-xl font-medium">Faculty-in-Charge</span>
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
-            <div className="grid grid-cols-1 gap-5 lg:flex lg:justify-center lg:space-x-5 place-items-center mt-16">
-              <MemberCard member={member} />
+            <div className="flex flex-wrap grid grid-cols-3 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+              {data.others.map((member, i) => {
+                if (member.team == "Faculty-in-Charge") {
+                  return <MemberCard member={member} key={i} />;
+                }
+              })}
             </div>
           </div>
 
           <div className="mt-36">
             <div className="flex items-center justify-center space-x-8 lg:space-x-16">
               <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white"></div>
-              <span className="text-white text-xl font-medium">
-                Coordinators
-              </span>
+              <span className="text-white text-xl font-medium">Coordinators</span>
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
-            <div className="grid grid-cols-1 gap-5 lg:flex lg:justify-center lg:space-x-5 place-items-center mt-16">
-              <MemberCard member={member} />
-              <MemberCard member={member} />
-              <MemberCard member={member} />
+            <div className="flex flex-wrap grid grid-cols-3 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+              {data.others.map((member, i) => {
+                if (member.team.includes("Coordinator")) {
+                  return <MemberCard member={member} key={i} />;
+                }
+              })}
+            </div>
+          </div>
+
+          <div className="mt-36">
+            <div className="flex items-center justify-center space-x-8 lg:space-x-16">
+              <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white"></div>
+              <span className="text-white text-xl font-medium">Leads</span>
+              <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
+            </div>
+            <div className="flex flex-wrap grid grid-cols-3 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+              {data.leads.map((member, i) => {
+                return <MemberCard member={member} key={i} />;
+              })}
+            </div>
+          </div>
+
+          <div className="mt-36">
+            <div className="flex items-center justify-center space-x-8 lg:space-x-16">
+              <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white"></div>
+              <span className="text-white text-xl font-medium">Our Gems</span>
+              <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
+            </div>
+            <div className="flex flex-wrap grid grid-cols-5 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+              {data.member.map((member, i) => {
+                return <MemberCard member={member} key={i} />;
+              })}
             </div>
           </div>
         </div>

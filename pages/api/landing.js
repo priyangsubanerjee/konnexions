@@ -2,7 +2,7 @@
 
 import { client, gql } from "@/graph";
 
-export default async function handler(req, res) {
+const handler = async(req, res) => {
   const query = gql`
     query LandingPages {
       landingPages {
@@ -43,15 +43,18 @@ export default async function handler(req, res) {
       }
     }
   `;
-  try {
-    const { landingPages } = await client.request(query);
+
+  await client.request(query).then((data) => {
+    console.log(data);
     res.status(200).json({
-      data: landingPages[0],
+      data: data.landingPages[0],
     });
-  } catch (error) {
-    console.log(error);
+  }).catch((err) => {
+    console.log(err);
     res.status(500).json({
-      error: error,
+      error: err,
     });
-  }
+  });
 }
+
+export default handler;

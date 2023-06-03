@@ -36,6 +36,10 @@
 
 <h4 align="center">For Developers</h4>
 <p>
+  <strong>Clone the repository</strong>:
+  <code>git clone https://github.com/54nd339/konnexions.git</code> <br />
+  <strong>Install Dependencies</strong>:
+  <code>npm install</code> <br />
   <strong>For Development</strong>: 
   <code>npm run dev</code> <br />
   <strong>For Production Build</strong>:
@@ -48,6 +52,7 @@
 <h4 align="center">ToDos</h4>
 <p>
   <ul>
+    <li> Filters in Resources Tab </li>
     <li> Our Work Tab (Having our Projects/Events and Achievements) </li>
     <li> Testimonials, Gallary in Contact Page </li>
     <li> Blog section in Resources Tab </li>

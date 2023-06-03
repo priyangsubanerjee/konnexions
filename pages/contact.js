@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
+import axios from "axios";
 
 function Contact() {
   const [gmailError, setGmailError] = useState("");
@@ -11,7 +12,7 @@ function Contact() {
     message: "",
   });
   const emailRegex = new RegExp(
-    "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+    "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
   );
 
   useEffect(() => {
@@ -29,6 +30,33 @@ function Contact() {
     } else setFormSubmit(true);
     setGmailError("");
   }, [contactDetails]);
+
+  const handleChange = (e) => {
+    setContactDetails({ ...contactDetails, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formSubmit) return;
+    const resp = await axios.post(
+      process.env.NODE_ENV == "production"
+        ? "https://konnexions.herokuapp.com/api/contact"
+        : "http://localhost:3000/api/contact",
+      contactDetails
+    );
+
+    if (resp.status == 200) {
+      setContactDetails({
+        name: "",
+        email: "",
+        message: "",
+      });
+      setFormSubmit(false);
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <>
       <Head><title>Konnexions - Contact</title></Head>
@@ -60,15 +88,15 @@ function Contact() {
                     scrolling="no"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2630.269281427254!2d85.82064982337539!3d20.35791870849655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19093cc3e1974b%3A0x85a345e1f4fcce86!2sKIIT%20Student%20Activity%20Center%20-%20KSAC!5e0!3m2!1sen!2sin!4v1685780284805!5m2!1sen!2sin"
                     style={{ filter: "brightness(80%) saturate(150%) hue-rotate(190deg) opacity(0.6)" }}
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
                 <div className="flex container mx-auto px-5 py-5 pt-24">
-                  <div className="lg:w-1/3 md:w-1/2 bg-indigo-900 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative sm:z-10 -z-1">
-                    <form action="submit">
+                  <div className="lg:w-1/3 md:w-1/2 bg-indigo-900 backdrop-blur-md rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative sm:z-10 -z-1 opacity-90 lg:opacity-100">
+                    <form onSubmit={handleSubmit}>
                       <div className="flex flex-col justify-center md:flex-row md:gap-8 sm:gap-2 mt-2 w-[100%]">
                         <div className="md:w-[50%] w-[100%]">
-                          <div className="text-white mb-1">Name</div>
+                          <div className="lg:text-white mb-1">Name</div>
                           <input
                             value={contactDetails.name}
                             onChange={(e) =>
@@ -77,13 +105,13 @@ function Contact() {
                                 name: e.target.value,
                               })
                             }
-                            className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-2 outline-none text-white"
+                            className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-2 outline-none lg:text-white"
                             type="text"
                             placeholder="Joseph"
                           />
                         </div>
                         <div className="md:w-[50%] w-[100%]">
-                          <div className="text-white mb-1">Email</div>
+                          <div className="lg:text-white mb-1">Email</div>
                           <input
                             value={contactDetails.email}
                             onChange={(e) =>
@@ -92,14 +120,14 @@ function Contact() {
                                 email: e.target.value,
                               })
                             }
-                            className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-2 outline-none text-white"
+                            className="bg-white/[0.12] border border-white/[0.11] h-[50px] md:h-[78px] rounded w-[100%] px-2 outline-none lg:text-white"
                             type="gmail"
                             placeholder="Joseph@gmail.com"
                           />
                         </div>
                       </div>
                       <div className="flex flex-col justify-center mt-2">
-                        <div className="text-white mb-1">Message</div>
+                        <div className="lg:text-white mb-1">Message</div>
                         <textarea
                           name="message"
                           type="text"
@@ -110,7 +138,7 @@ function Contact() {
                               message: e.target.value,
                             })
                           }
-                          className="bg-white/[0.12] pt-4 border border-white/[0.11] h-[100px] md:h-[150px] rounded w-[100%] px-2 outline-none text-white"
+                          className="bg-white/[0.12] pt-4 border border-white/[0.11] h-[100px] md:h-[150px] rounded w-[100%] px-2 outline-none lg:text-white"
                           placeholder="Enter a message"
                           style={{ resize: "none" }}
                         ></textarea>
@@ -119,7 +147,7 @@ function Contact() {
                         <div className="text-red-700">{gmailError}</div>
                         <button
                           disabled={!formSubmit}
-                          className="bg-white text-sm text-black py-2 px-8 rounded-md mt-4 cursor-pointer hover:bg-gray-200"
+                          className="text-sm py-2 px-8 rounded-md mt-4 cursor-pointer transition duration bg-indigo-900 text-white hover:bg-indigo-600"
                         >
                           Submit
                         </button>
