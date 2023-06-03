@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
 import NavBar from "@/components/Navbar";
+import Head from "next/head";
 
 const Contact = () => {
   const [gmailError, setGmailError] = useState("");
@@ -28,6 +29,7 @@ const Contact = () => {
   }, [contactDetails]);
   return (
     <>
+      <Head><title>Konnexions - Contact</title></Head>
       <NavBar />
       <div className="fixed inset-0 h-screen w-screen bg-black overflow-x-hidden">
         <div className="relative inset-0 h-screen w-screen overflow-x-hidden">

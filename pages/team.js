@@ -6,7 +6,8 @@ import Polygon_1 from "/public/Polygon_1.svg";
 import Polygon_2 from "/public/Polygon_2.svg";
 import Image from "next/image";
 import Ellipse_Team from "/public/Ellipse_Team.svg";
-import NavBar from "@/components/avbar";
+import NavBar from "@/components/Navbar";
+import Head from "next/head";
 
 const teams = () => {
   const member = {
@@ -101,8 +102,9 @@ const teams = () => {
     //     <div className="h-[1000px] w-[1000px] absolute z-10 left-[100%] top-[100%] rounded-full bg-gradient-to-br from-[#140D5B]/70 lg:from-[#140D5B] to-transparent -translate-x-1/2 -translate-y-1/2 blur-[250px]" />
     //   </div>
     // </div>
-
+    
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
+      <Head><title>Konnexions - Team</title></Head>
       <NavBar />
       <div className="h-full w-full relative overflow-y-auto overflow-x-hidden mb-44 pb-44 scrollbar-hide">
         <img

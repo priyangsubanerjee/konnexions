@@ -2,6 +2,7 @@
 import EventsCard from "@/components/EventsCard";
 import ServicesCard from "@/components/ServicesCard";
 import NavBar from "@/components/Navbar";
+import Head from "next/head";
 import axios from "axios";
 
 export async function getServerSideProps() {
@@ -21,6 +22,7 @@ export async function getServerSideProps() {
 export default function Home({ data }) {
   return (
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-hidden scrollbar-hide">
+      <Head><title>Konnexions</title></Head>
       <NavBar />
       <div className="h-full w-full relative overflow-y-auto overflow-x-hidden mb-44 pb-44 scrollbar-hide">
         <img
