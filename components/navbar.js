@@ -10,7 +10,7 @@ function NavBar() {
       if (data) return;
       const resp = await fetch(
         process.env.NODE_ENV == "production"
-          ? "https://konnexions-vbc.vercel.app/api/logos" || "https://konnexions.netlify.app/api/logos"
+          ? "https://konnexions.netlify.app/api/logos"
           : "http://localhost:3000/api/logos"
       );
       const json = await resp.json();

@@ -8,7 +8,7 @@ import axios from "axios";
 export async function getServerSideProps() {
   const resp = await axios.get(
     process.env.NODE_ENV == "production"
-      ? "https://konnexions-vbc.vercel.app/api/landing" || "https://konnexions.netlify.app/api/landing"
+      ? "https://konnexions.netlify.app/api/landing"
       : "http://localhost:3000/api/landing"
   );
 
