@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import axios from "axios";
 import ResourcesCard from "@/components/ResourcesCard";

@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 
 function EventsCard({ data }) {
-  // const currentDate = new Date();
-  // const eventDate = new Date(data.date);
-  // const isFutureEvent = eventDate > currentDate;
-
   const handleRegisterClick = () => {
     if (isFutureEvent) {
       window.open(data.regLink, "_blank");

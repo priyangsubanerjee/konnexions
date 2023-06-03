@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import axios from "axios";
@@ -11,11 +12,12 @@ function Contact() {
     email: "",
     message: "",
   });
-  const emailRegex = new RegExp(
-    "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-  );
 
   useEffect(() => {
+    const emailRegex = new RegExp(
+      "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    );
+  
     if (
       contactDetails.name.length == 0 ||
       contactDetails.email.length == 0 ||
