@@ -18,7 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Resources() {
+export default function Resources({ data }) {
   return (
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Resources</title></Head>

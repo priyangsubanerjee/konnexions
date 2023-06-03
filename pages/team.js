@@ -18,7 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-const Teams = () => {
+const Teams = ({ data }) => {
   return (    
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Team</title></Head>
