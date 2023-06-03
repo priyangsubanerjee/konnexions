@@ -21,7 +21,9 @@ export async function getServerSideProps() {
 export default function Home({ data }) {
   return (
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-hidden scrollbar-hide">
-      <Head><title>Konnexions</title></Head>
+      <Head>
+        <title>Konnexions</title>
+      </Head>
       <div className="h-full w-full relative overflow-y-auto overflow-x-hidden mb-44 pb-44 scrollbar-hide">
         <img
           src="/landingGradient_1.png"
@@ -95,16 +97,21 @@ export default function Home({ data }) {
                 </div>
               </div> */}
               <div className="flex items-center space-x-4">
-                {data.socialMedias.map(item => {
+                {data.socialMedias.map((item) => {
                   return (
-                    <a key={item.name} href={item.link} target="_blank" rel="noreferrer">
+                    <a
+                      key={item.name}
+                      href={item.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img
                         src={item.icon.url}
                         alt=""
                         className="h-8 w-8 cursor-pointer"
                       />
                     </a>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -129,7 +136,7 @@ export default function Home({ data }) {
             <p className="text-white/70 text-sm text-center mt-3">
               {data.eventsDescription}
             </p>
-            <div className="flex flex-wrap place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center lg:space-x-7 mt-10">
+            <div className="flex flex-wrap place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center mt-10">
               {data.events.map((item, i) => {
                 return <EventsCard data={item} key={i} />;
               })}
