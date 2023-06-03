@@ -3,31 +3,6 @@
 @tailwind utilities;
 
 /* The lines which have been commented out were already present as a css reset, instead I've used my own css resets*/
-
-/*:root {*/
-/*--foreground-rgb: 0, 0, 0;*/
-/*--background-start-rgb: 214, 219, 220;*/
-/*--background-end-rgb: 255, 255, 255;*/
-/*}*/
-
-/*@media (prefers-color-scheme: dark) {*/
-/*:root {*/
-/*--foreground-rgb: 255, 255, 255;*/
-/*--background-start-rgb: 0, 0, 0;*/
-/*--background-end-rgb: 0, 0, 0;*/
-/*}*/
-/*}*/
-
-/*body {*/
-/*color: rgb(var(--foreground-rgb));*/
-/*background: linear-gradient(*/
-/*to bottom,*/
-/*transparent,*/
-/*rgb(var(--background-end-rgb))*/
-/*)*/
-/*rgb(var(--background-start-rgb));*/
-/*}*/
-
 :root {
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-100: hsl(13, 100%, 96%);
@@ -68,16 +43,9 @@
 }
 
 /* Set core body defaults */
-html {
-  overflow: hidden;
-  width: 100%;
-}
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden;
-  height: 100%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
 }

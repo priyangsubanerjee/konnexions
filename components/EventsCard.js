@@ -14,7 +14,7 @@ function EventsCard({ data }) {
       <img src={data.image.url} alt="" className="h-[180px] w-full" />
       <h1 className="mt-6 text-lg text-white">{data.name}</h1>
       <p className="text-white/40 text-xs leading-7 mt-1">
-        {data.description.substring(0, 100) + "..."}
+        {data.description.substring(0, 150) + "..."}
       </p>
       <div className="flex items-center justify-between mt-5">
         {data.state == "register" && (
