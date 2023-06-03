@@ -48,7 +48,7 @@ function Contact() {
               <div className="text-white text-center mt-4 text-[.7rem] md:text-[1rem] w-[100vw] px-6 leading-7">
                 Reach Out to Us for Any Inquiries, Collaborations, or Just a Friendly Chat.
               </div>
-              <div className="relative body-font mx-24 mt-12 rounded-lg">
+              <div className="relative body-font mx-4 lg:mx-24 mt-6 lg:mt-12 rounded-lg">
                 <div className="absolute inset-0 bg-gray-300 rounded-lg">
                   <iframe
                     width="100%"
