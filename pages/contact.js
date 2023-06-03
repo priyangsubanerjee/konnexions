@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/Navbar";
 
 const Contact = () => {
   const [gmailError, setGmailError] = useState("");

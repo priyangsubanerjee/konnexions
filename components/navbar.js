@@ -1,18 +1,41 @@
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function NavBar() {
   const [sidenavOpen, setSidenavOpen] = useState(false);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (data) return;
+      const resp = await fetch(
+        process.env.NODE_ENV == "production"
+          ? "https://konnexions-vbc.vercel.app/api/logos"
+          : "http://localhost:3000/api/logos"
+      );
+      const json = await resp.json();
+      setData(json.data);
+    };
+    fetchData();
+  }, [data]);
+
+  if (!data) return null;
+
   return (
     <div>
       <nav className="fixed z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
-        <div>
-          <h1 className="text-white font-semibold text-2xl lg:text-3xl">
-            Logo
-          </h1>
+        <div className="flex items-center space-x-5 text-white text-sm lg:text-xl">
+          <Link href="/" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
+            <img src={data.konnexion.url} alt="konnexions" className="w-full h-auto" />
+          </Link>
+          <Link href="https://ksac.kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
+            <img src={data.ksac.url} alt="ksac" className="w-full h-auto" />
+          </Link>
+          <Link href="https://kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
+            <img src={data.kiit.url} alt="kiit" className="w-full h-auto" />
+          </Link>
         </div>
-        <ul className="hidden md:flex items-center space-x-16">
+        <ul className="hidden md:flex items-center space-x-16 ml-auto">
           <li className="text-white/70 hover:text-white text-sm transition-all">
             <Link href="/">Home</Link>
           </li>
@@ -20,10 +43,10 @@ function NavBar() {
             <Link href="/team">Team</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link href="/projects">Projects & Achievemets</Link>
+            <Link href="/projects">Resources</Link>
           </li>
           <li className="text-white/70 hover:text-white text-sm transition-all">
-            <Link href="/contact">Contact us</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
         <div>
@@ -35,13 +58,13 @@ function NavBar() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
-              class="w-6 h-6"
+              className="w-6 h-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
               />
             </svg>
@@ -53,7 +76,7 @@ function NavBar() {
           <div className="flex items-center justify-between px-6 h-20">
             <div>
               <h1 className="text-white font-semibold text-2xl lg:text-3xl">
-                Logo
+                KONNEXIONS
               </h1>
             </div>
             <div>
@@ -65,13 +88,13 @@ function NavBar() {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  className="w-6 h-6"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -86,10 +109,10 @@ function NavBar() {
               <Link href="/team">Team</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/projects">Projects & Achievemets</Link>
+              <Link href="/projects">Resources</Link>
             </li>
             <li className="text-white/70 hover:text-white transition-all">
-              <Link href="/contact">Contact us</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
@@ -99,68 +122,3 @@ function NavBar() {
 }
 
 export default NavBar;
-
-//   <nav className="w-full bg-transparent sticky top-0 left-0 right-0 z-10">
-//     <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-//       <div>
-//         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-//           {/* LOGO */}
-//           <Link href="/">
-//             <h2 className="text-2xl text-cyan-600 font-bold ">LOGO</h2>
-//           </Link>
-//           {/* HAMBURGER BUTTON FOR MOBILE */}
-//           <div className="md:hidden">
-//             <button
-//               className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-//               onClick={() => setNavbar(!navbar)}
-//             >
-//               {navbar ? (
-//                 <Image src="/close.png" width={30} height={30} alt="logo" />
-//               ) : (
-//                 <Image
-//                   src="/ham.png"
-//                   width={30}
-//                   height={30}
-//                   alt="logo"
-//                   className="focus:border-none active:border-none"
-//                 />
-//               )}
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-//       <div>
-//         <div
-//           className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-//             navbar ? "p-12 md:p-0 block" : "hidden"
-//           }`}
-//         >
-//           <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-//             <li className="pb-6 text-xl text-white py-2 md:px-6 text-center border-b-2 md:border-b-0 hover:bg-white hover:text-black md:hover:text-white md:hover:bg-transparent">
-//               <Link href="/" onClick={() => setNavbar(!navbar)}>
-//                 Home
-//               </Link>
-//             </li>
-//             <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-white hover:text-black md:hover:text-white md:hover:bg-transparent">
-//               <Link href="/Team" onClick={() => setNavbar(!navbar)}>
-//                 Team
-//               </Link>
-//             </li>
-//             <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-white hover:text-black md:hover:text-white md:hover:bg-transparent">
-//               <Link
-//                 href="/ProjectsAndAchievements"
-//                 onClick={() => setNavbar(!navbar)}
-//               >
-//                 Projects & Achievemets
-//               </Link>
-//             </li>
-//             <li className="pb-6 text-xl text-white py-2 px-6 text-center  border-b-2 md:border-b-0  hover:bg-white hover:text-black md:hover:text-white md:hover:bg-transparent">
-//               <Link href="/contact.js" onClick={() => setNavbar(!navbar)}>
-//                 Contact Us
-//               </Link>
-//             </li>
-//           </ul>
-//         </div>
-//       </div>
-//     </div>
-//   </nav>;

@@ -12,8 +12,8 @@ function ServicesCard({ data }) {
       <div className="absolute text-white inset-0 h-full w-full z-10 flex flex-col items-center justify-center">
         <img src={data.icon.url} className="h-16 w-16 object-contain" alt="" />
         <h2 className="mt-7 font-semibold text-sm lg:text-lg">{data.name}</h2>
-        <p className="text-xs lg:text-sm font-light opacity-70 mt-3">
-          {data.projects.length}+ Projects
+        <p className="text-xs lg:text-sm font-light opacity-70 mt-3 px-3">
+          {data.description}
         </p>
       </div>
     </div>

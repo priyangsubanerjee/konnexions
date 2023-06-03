@@ -6,18 +6,40 @@ export default async function handler(req, res) {
   const query = gql`
     query LandingPages {
       landingPages {
+        mainHeading
         arrayFeat
         description
-        heading1
+        socialMedias {
+          name
+          link
+          icon {
+            url
+          }
+        }
+        serviceHeading
+        serviceDescription
         services {
           name
           icon {
             url
           }
-          projects {
-            id
-          }
+          description
         }
+        eventsHeading
+        eventsDescription
+        events {
+          name
+          image {
+            url
+          }
+          description
+          date
+          state
+          regLink
+        }
+        newsHeading
+        newsDescription
+        newsContent
       }
     }
   `;

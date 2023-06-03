@@ -1,12 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import EventsCard from "@/components/EventsCard";
 import ServicesCard from "@/components/ServicesCard";
-import SnapBox from "@/components/SnapBox";
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/Navbar";
 import axios from "axios";
-import { Inter } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
 
 export async function getServerSideProps() {
   const resp = await axios.get(
@@ -60,7 +56,7 @@ export default function Home({ data }) {
         <div className="absolute z-10 h-fit w-full pt-32 pb-28 lg:pt-44 px-6 lg:px-24">
           <div>
             <h1 className="text-center text-white text-3xl lg:text-6xl font-bold lg:font-extrabold leading-[1.6]">
-              {data.heading1}
+              {data.mainHeading}
             </h1>
             <div className="flex items-center space-x-6 justify-center text-white text-sm lg:text-xl mt-7 lg:mt-16">
               {data.arrayFeat.map((item, index) => {
@@ -78,7 +74,7 @@ export default function Home({ data }) {
               <p>{data.description}</p>
             </div>
             <div className="flex items-center justify-center mt-16">
-              <div className="h-16 hover:bg-white/5 border border-white/20 rounded-lg flex items-center px-2 transition-all cursor-pointer">
+              {/* <div className="h-16 hover:bg-white/5 border border-white/20 rounded-lg flex items-center px-2 transition-all cursor-pointer">
                 <div className="h-12 w-12 relative">
                   <img
                     src="/calendarIcon.png"
@@ -97,17 +93,31 @@ export default function Home({ data }) {
                     12:00 PM - 1:00 PM
                   </span>
                 </div>
+              </div> */}
+              {/* Social Media Links - Instagram, Facebook, LinkedIn */}
+              <div className="flex items-center space-x-4">
+                {data.socialMedias.map(item => {
+                  return (
+                    <a key={item.name} href={item.link} target="_blank" rel="noreferrer">
+                      <img
+                        src={item.icon.url}
+                        alt=""
+                        className="h-8 w-8 cursor-pointer"
+                      />
+                    </a>
+                  )
+                })}
               </div>
             </div>
           </div>
           <div className="mt-56">
             <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
-              Services
+              {data.serviceHeading}
             </h1>
             <p className="text-white/70 text-sm text-center mt-3">
-              Lorem ipsum dolor sit amet
+              {data.serviceDescription}
             </p>
-            <div className="place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-10">
+            <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-10">
               {data.services.map((item, i) => {
                 return <ServicesCard data={item} key={i} />;
               })}
@@ -115,23 +125,23 @@ export default function Home({ data }) {
           </div>
           <div className="mt-56">
             <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
-              Events
+              {data.eventsHeading}
             </h1>
             <p className="text-white/70 text-sm text-center mt-3">
-              Lorem ipsum dolor sit amet
+              {data.eventsDescription}
             </p>
-            <div className="place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center lg:space-x-7 mt-10">
-              <EventsCard />
-              <EventsCard />
-              <EventsCard />
+            <div className="flex flex-wrap place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center lg:space-x-7 mt-10">
+              {data.events.map((item, i) => {
+                return <EventsCard data={item} key={i} />;
+              })}
             </div>
           </div>
           <div className="mt-56">
             <h1 className="text-center text-white text-xl lg:text-3xl font-bold lg:font-extrabold leading-[1.6]">
-              News letter
+              {data.newsHeading}
             </h1>
             <p className="text-white/70 text-sm text-center mt-3">
-              Lorem ipsum dolor sit amet
+              {data.newsDescription}
             </p>
             <div className="w-full lg:w-[70%] mt-10 h-fit mx-auto bg-[#151515] grid grid-cols-1 lg:grid-cols-2 rounded-lg lg:rounded-2xl">
               <div className="p-5 lg:p-10">
@@ -139,8 +149,7 @@ export default function Home({ data }) {
                   Signup for the weekly newsletter.
                 </h1>
                 <p className="text-white/70 text-xs leading-6 mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae ea vero nemo aspernatur neque nam quam consectetur.
+                  {data.newsContent}
                 </p>
                 <div className="items-center mt-7">
                   <input

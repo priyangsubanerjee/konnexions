@@ -6,7 +6,7 @@ import Polygon_1 from "/public/Polygon_1.svg";
 import Polygon_2 from "/public/Polygon_2.svg";
 import Image from "next/image";
 import Ellipse_Team from "/public/Ellipse_Team.svg";
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/avbar";
 
 const teams = () => {
   const member = {

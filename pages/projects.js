@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Achievement from "@/components/Achievement";
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/Navbar";
 import React from "react";
 
 function Projects() {
