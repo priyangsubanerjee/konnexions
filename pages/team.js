@@ -1,28 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import MemberCard from "@/components/MemberCard";
 import Head from "next/head";
 
+export async function getServerSideProps() {
+  const resp = await axios.get(
+    process.env.NODE_ENV == "production"
+      ? "https://konnexions.netlify.app/api/member"
+      : "http://localhost:3000/api/member"
+  );
+
+  return {
+    props: {
+      data: resp.data.data,
+    },
+  };
+}
+
 const Teams = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (data) return;
-      const resp = await axios.get(
-        process.env.NODE_ENV == "production"
-          ? "https://konnexions.netlify.app/api/member"
-          : "http://localhost:3000/api/member"
-      );
-      setData(resp.data.data);
-    }
-    fetchData();
-  }, [data]);
-
-  if (!data) return null;
-
   return (    
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Team</title></Head>
@@ -61,7 +57,7 @@ const Teams = () => {
               <span className="text-white text-xl font-medium">Faculty-in-Charge</span>
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
-            <div className="flex flex-wrap grid grid-cols-3 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+            <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-3 gap-3 lg:flex items-center justify-center lg:space-x-7  mt-16">
               {data.others.map((member, i) => {
                 if (member.team == "Faculty-in-Charge") {
                   return <MemberCard member={member} key={i} />;
@@ -76,7 +72,7 @@ const Teams = () => {
               <span className="text-white text-xl font-medium">Coordinators</span>
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
-            <div className="flex flex-wrap grid grid-cols-3 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+            <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-3 gap-3 lg:flex items-center justify-center lg:space-x-7  mt-16">
               {data.others.map((member, i) => {
                 if (member.team.includes("Coordinator")) {
                   return <MemberCard member={member} key={i} />;
@@ -104,7 +100,7 @@ const Teams = () => {
               <span className="text-white text-xl font-medium">Our Gems</span>
               <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white"></div>
             </div>
-            <div className="flex flex-wrap grid grid-cols-5 gap-5 lg:justify-center lg:space-x-5 place-items-center mt-16">
+            <div className="flex flex-wrap grid grid-cols-5 gap-1 lg:justify-center lg:space-x-5 place-items-center mt-16">
               {data.member.map((member, i) => {
                 return <MemberCard member={member} key={i} />;
               })}

@@ -1,28 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import ResourcesCard from "@/components/ResourcesCard";
 import Head from "next/head";
 
+export async function getServerSideProps() {
+  const resp = await axios.get(
+    process.env.NODE_ENV == "production"
+    ? "https://konnexions.netlify.app/api/resource"
+    : "http://localhost:3000/api/resource"
+  );
+
+  return {
+    props: {
+      data: resp.data.data,
+    },
+  };
+}
+
 export default function Resources() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (data) return;
-      const resp = await axios.get(
-        process.env.NODE_ENV == "production"
-          ? "https://konnexions.netlify.app/api/resource"
-          : "http://localhost:3000/api/resource"
-      );
-      setData(resp.data.data);
-    }
-    fetchData();
-  }, [data]);
-
-  if (!data) return null;
-
   return (
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Resources</title></Head>
