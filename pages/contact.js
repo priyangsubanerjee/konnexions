@@ -43,7 +43,7 @@ function Contact() {
             />
             <div>
               <h1 className="text-white font-bold text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] text-center max-w-[1440px] m-auto">
-                Don&rsquot Be Shy, Let&rsquos Connect!
+                Don&apos;t Be Shy, Let&apos;s Connect!
               </h1>
               <div className="text-white text-center mt-4 text-[.7rem] md:text-[1rem] w-[100vw] px-6 leading-7">
                 Reach Out to Us for Any Inquiries, Collaborations, or Just a Friendly Chat.
