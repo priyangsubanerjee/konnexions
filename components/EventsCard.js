@@ -8,22 +8,23 @@ function EventsCard({ data }) {
 
   const handleRegisterClick = () => {
     if (isFutureEvent) {
-      window.open(data.regLink, '_blank');
+      window.open(data.regLink, "_blank");
     }
   };
 
   return (
-    <div className="w-[350px] border border-white/20 rounded-2xl p-5">
+    <div className="w-[370px] border border-white/20 rounded-2xl p-5">
       <img src={data.image.url} alt="" className="h-[180px] w-full" />
       <h1 className="mt-6 text-lg text-white">{data.name}</h1>
       <p className="text-white/40 text-xs leading-7 mt-1">
-        {data.description}
+        {data.description.substring(0, 100) + "..."}
       </p>
       <div className="flex items-center justify-between mt-5">
-        {data.state == 'register' && (
+        {data.state == "register" && (
           <button
-          className="px-6 py-2 rounded-full bg-white text-black text-xs"
-          onClick={handleRegisterClick}>
+            className="px-6 py-2 rounded-full bg-white text-black text-xs"
+            onClick={handleRegisterClick}
+          >
             Register
           </button>
         )}
