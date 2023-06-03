@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import EventsCard from "@/components/EventsCard";
 import ServicesCard from "@/components/ServicesCard";
-import NavBar from "@/components/Navbar";
 import Head from "next/head";
 import axios from "axios";
 
@@ -23,7 +22,6 @@ export default function Home({ data }) {
   return (
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-hidden scrollbar-hide">
       <Head><title>Konnexions</title></Head>
-      <NavBar />
       <div className="h-full w-full relative overflow-y-auto overflow-x-hidden mb-44 pb-44 scrollbar-hide">
         <img
           src="/landingGradient_1.png"
@@ -96,7 +94,6 @@ export default function Home({ data }) {
                   </span>
                 </div>
               </div> */}
-              {/* Social Media Links - Instagram, Facebook, LinkedIn */}
               <div className="flex items-center space-x-4">
                 {data.socialMedias.map(item => {
                   return (

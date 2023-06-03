@@ -1,15 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import Achievement from "@/components/Achievement";
-import NavBar from "@/components/Navbar";
+import ResourcesCard from "@/components/ResourcesCard";
 import React from "react";
 import Head from "next/head";
 
-function Projects() {
+export default function Resources() {
   return (
     <div className="fixed inset-0 h-screen w-screen overflow-hidden bg-black">
       <Head><title>Konnexions - Resources</title></Head>
-      <NavBar />
-
       <div className="h-full w-full relative overflow-y-auto overflow-x-hidden mb-44 pb-44 scrollbar-hide">
         <img
           src="/projectsGradient_1.png"
@@ -32,19 +29,17 @@ function Projects() {
           <div className="flex items-center justify-center space-x-8 lg:space-x-16 mt-20">
             <div className="w-56 h-[1px] bg-gradient-to-r from-transparent to-white/50"></div>
             <span className="text-white text-sm lg:text-xl font-medium">
-              Achievements
+              Resources
             </span>
             <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white/50"></div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 mt-16 lg:w-[700px] lg:mx-auto">
-            <Achievement />
-            <Achievement />
-            <Achievement />
+            <ResourcesCard />
+            <ResourcesCard />
+            <ResourcesCard />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default Projects;

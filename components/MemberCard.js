@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
 
-const TeamCard = ({ member }) => {
+const MemberCard = ({ member }) => {
   const checkIcon = (name) => {
     switch (name) {
       case "Linkedin":
@@ -49,4 +49,4 @@ const TeamCard = ({ member }) => {
   );
 };
 
-export default TeamCard;
+export default MemberCard;
