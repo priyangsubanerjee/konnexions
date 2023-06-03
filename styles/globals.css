@@ -68,9 +68,16 @@
 }
 
 /* Set core body defaults */
+html {
+  overflow: hidden;
+  width: 100%;
+}
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
