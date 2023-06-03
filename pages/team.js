@@ -5,7 +5,7 @@ import axios from "axios";
 import MemberCard from "@/components/MemberCard";
 import Head from "next/head";
 
-const teams = () => {
+const Teams = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
