@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Head } from "next/document";
 
 export default function NavBar() {
   const [sidenavOpen, setSidenavOpen] = useState(false);
@@ -29,6 +30,7 @@ export default function NavBar() {
   ];
 
   return (<>
+    <Head><meta name="viewport" content="width=device-width, initial-scale=1.0" /></Head>
     <nav className="fixed z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
       <div className="flex items-center space-x-5 text-white text-sm lg:text-xl">
         <Link href="https://kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
