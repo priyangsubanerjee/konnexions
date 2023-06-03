@@ -116,4 +116,4 @@ const Teams = () => {
   );
 };
 
-export default teams;
+export default Teams;
