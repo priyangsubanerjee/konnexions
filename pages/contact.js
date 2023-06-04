@@ -58,6 +58,13 @@ function Contact() {
     }
   };
 
+  const openMap = () => {
+    const link = 'https://www.google.com/maps/place/KIIT+Student+Activity+Center+-+KSAC/@20.3548831,85.8191383,16.7z/data=!4m6!3m5!1s0x3a19093cc3e1974b:0x85a345e1f4fcce86!8m2!3d20.3566159!4d85.818928!16s%2Fg%2F11bx2gww9n?entry=ttu'
+    if (window.innerWidth < 768) {
+      window.open(link, '_blank')
+    }
+  }
+
   return (
     <>
       <Head><title>Konnexions - Contact</title></Head>
@@ -93,7 +100,7 @@ function Contact() {
                     className="rounded-lg"
                   ></iframe>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-800/40 to-slate-950/70 rounded-lg pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-800/40 to-slate-950/70 rounded-lg lg:pointer-events-none" onClick={ openMap }></div>
                 <div className="flex container mx-auto px-5 py-5 pt-24">
                   <div className="lg:w-1/3 md:w-1/2 bg-transparent backdrop-blur-md rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative sm:z-10 -z-1 opacity-90 lg:opacity-100 border">
                     <form onSubmit={handleSubmit}>
