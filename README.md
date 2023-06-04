@@ -52,6 +52,8 @@
 <h4 align="center">ToDos</h4>
 <p>
   <ul>
+    <li> Hamburger to Cross Animation </li>
+    <li> Add Animations to Register Button </li>
     <li> Filters and Search Bar in Resources Tab </li>
     <li> Hover Effects on Cards </li>
     <li> Parallax Effects (Scroll) in bg of every page </li>

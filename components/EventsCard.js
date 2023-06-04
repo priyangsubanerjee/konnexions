@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-
 import React from "react";
 
 function EventsCard({ data }) {
@@ -25,7 +24,7 @@ function EventsCard({ data }) {
       <div className="flex items-center justify-between mt-5">
         {data.state == "register" && (
           <button
-            className="px-6 py-2 rounded-full bg-white text-black text-xs"
+            className="px-6 py-2 rounded-full bg-white text-black text-xs hover:bg-gray-200"
             onClick={handleRegisterClick}
           >
             Register

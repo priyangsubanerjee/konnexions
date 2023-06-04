@@ -27,7 +27,7 @@ export default function ResourcesCard({ data }) {
             <span className="text-white font-medium">{data.category}</span>
           </div>
           <a href={data.href} className="p-2">
-            <FaLink size={18} color="fff" />
+            <FaLink size={18} className="hover:text-blue-400 text-white" />
           </a>
         </div>
       </div>

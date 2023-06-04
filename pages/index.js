@@ -171,7 +171,7 @@ export default function Home({ data }) {
             <p className="text-white/70 text-sm text-center mt-3">
               {data.serviceDescription}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:justify-center place-items-center mt-16">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:justify-center place-items-center mt-16">
               {data.services.map((item, i) => {
                 return <ServicesCard data={item} key={i} />;
               })}

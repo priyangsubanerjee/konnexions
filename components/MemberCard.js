@@ -37,17 +37,17 @@ const MemberCard = ({ data }) => {
         <div className="flex flex-row justify-center items-center mt-4">
           {data.techLink && (
             <a href={data.techLink} className="p-2">
-              <FaGithub size={18} color="fff" />
+              <FaGithub size={18} className="hover:text-gray-400 text-white" />
             </a>
           )}
           {data.email && (
             <a href={`mailto:${data.email}`} className="p-2">
-              <FaEnvelope size={18} color="fff" />
+              <FaEnvelope size={18} className="hover:text-rose-400 text-white" />
             </a>
           )}
           {data.other && (
             <a href={data.other} className="p-2">
-              <FontAwesomeIcon icon={faLink} size={18} style={{ color: "#fff" }} />
+              <FontAwesomeIcon icon={faLink} size={18} className="hover:text-blue-400 text-white" />
             </a>
           )}
         </div>
