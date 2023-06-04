@@ -16,7 +16,7 @@ export default function Document() {
         <meta property="og:title" content="Konnexions" />
         <meta property="og:description" content="Konnexions" />
         <meta property="og:image" content="/logos/grplogo.png" />
-        <meta property="og:url" content="https://konnexions-vbc.vercel.app/" />
+        <meta property="og:url" content="https://konnexions.netlify.app/" />
 
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

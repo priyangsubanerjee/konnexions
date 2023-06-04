@@ -52,13 +52,14 @@
 <h4 align="center">ToDos</h4>
 <p>
   <ul>
-    <li> Filters in Resources Tab </li>
+    <li> Filters and Search Bar in Resources Tab </li>
+    <li> Parallax Effects (Scroll) in bg of every page </li>
     <li> Our Work Tab (Having our Projects/Events and Achievements) </li>
     <li> Testimonials, Gallary in Contact Page </li>
     <li> Blog section in Resources Tab </li>
     <li> Events Snippet Page </li>
-    <li> Login/Signup Page </li>
-    <li> Dashboard for members </li>
+    <li> Login/Signup Modal </li>
+    <li> Dashboard Page for members </li>
   </ul>
 </p>
 <br />
