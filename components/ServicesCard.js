@@ -10,7 +10,7 @@ function ServicesCard({ data }) {
   }, []);
 
   return (
-    <div className="relative backdrop-blur lg:w-[250px] w-[150px] h-[150px]">
+    <div className="relative backdrop-blur lg:w-[250px] lg:h-[315px] w-[150px] h-[150px]">
       <img
         src="/servicesRectangle.png"
         alt=""
