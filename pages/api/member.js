@@ -9,35 +9,32 @@ const handler = async(req, res) => {
         description
         member {
           name
-          bio
+          email
+          domain
           image {
             url
           }
-          team
-          email
-          githubLink
+          techLink
           other
         }
         leads {
           name
-          bio
+          email
+          domain
           image {
             url
           }
-          team
-          email
-          githubLink
+          techLink
           other
         }
         others {
           name
-          bio
+          email
+          domain
           image {
             url
           }
-          team
-          email
-          githubLink
+          techLink
           other
         }
       }

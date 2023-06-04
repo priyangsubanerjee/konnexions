@@ -28,7 +28,7 @@ const MemberCard = ({ member }) => {
 
           <div className="bg-card_bg px-2 py-2 text-xs rounded mx-1">
             <p className="text-white font-medium text-center w-full leading-6">
-              {member.team}
+              {member.domain}
             </p>
           </div>
 
@@ -36,7 +36,7 @@ const MemberCard = ({ member }) => {
         </div>
         <div className="flex flex-row justify-center items-center mt-4">
           {member.githubLink && (
-            <a href={member.githubLink} className="p-2">
+            <a href={member.techLink} className="p-2">
               <FaGithub size={18} color="fff" />
             </a>
           )}
