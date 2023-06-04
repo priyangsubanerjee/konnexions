@@ -10,7 +10,7 @@ function EventsCard({ data }) {
   };
 
   return (
-    <div className="w-[370px] border border-white/20 rounded-2xl p-5 ml-0">
+    <div className="w-[370px] md:w-[340px] border border-white/20 rounded-2xl p-5 ml-0">
       <div className="p-2 relative w-full overflow-hidden h-[200px] rounded">
         <img
           src={data.image.url}

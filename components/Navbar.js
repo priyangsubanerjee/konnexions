@@ -29,7 +29,7 @@ export default function NavBar() {
   ];
 
   return (<>
-    <nav className="fixed z-30 top-0 inset-x-0 bg-transparent h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
+    <nav className="fixed z-30 top-0 inset-x-0 bg-gradient-to-b from-slate-900 to-slate-900/30 h-20 flex items-center justify-between lg:px-24 px-6 backdrop-blur">
       <div className="flex items-center space-x-5 text-white text-sm lg:text-xl">
         <Link href="https://kiit.ac.in/" target="_blank" className="w-full max-w-[100px] max-h-[100px] overflow-hidden">
           <img src={data.kiit.url} alt="kiit" className="w-full h-auto" />
@@ -71,7 +71,7 @@ export default function NavBar() {
       </div>
     </nav>
     {sidenavOpen && (
-      <div className="fixed inset-0 bg-black z-30">
+      <div className="fixed inset-0 bg-black/60 backdrop-blur z-30">
         <div className="flex items-center justify-between px-6 h-20">
           <div>
             <h1 className="text-white font-semibold text-2xl lg:text-3xl">

@@ -4,7 +4,7 @@ import React from "react";
 
 function ServicesCard({ data }) {
   return (
-    <div className="relative w-[170px] h-[220px] lg:w-[250px] lg:h-[315px] backdrop-blur">
+    <div className="relative w-[250px] h-[315px] backdrop-blur">
       <img
         src="/servicesRectangle.png"
         alt=""

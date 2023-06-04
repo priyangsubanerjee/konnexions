@@ -53,6 +53,7 @@
 <p>
   <ul>
     <li> Filters and Search Bar in Resources Tab </li>
+    <li> Hover Effects on Cards </li>
     <li> Parallax Effects (Scroll) in bg of every page </li>
     <li> Our Work Tab (Having our Projects/Events and Achievements) </li>
     <li> Testimonials, Gallary in Contact Page </li>
