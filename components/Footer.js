@@ -15,8 +15,8 @@ const Footer = () => {
     { name: "Facebook", link: "https://www.facebook.com/kiitkonnexions", icon: faFacebook, hovcolor: "hover:text-blue-500" },
     { name: "Instagram", link: "https://www.instagram.com/kiitkonnexions/", icon: faInstagram, hovcolor: "hover:text-pink-500" },
     { name: "LinkedIn", link: "https://www.linkedin.com/company/kiitkonnexions/", icon: faLinkedinIn, hovcolor: "hover:text-blue-500" },
-    { name: "Email", link: "mailto:it.society@kiit.ac.in", icon: faGithub, hovcolor: "hover:text-gray-500" },
-    { name: "Github", link: "https://github.com/kiit-konnexions/", icon: faEnvelope, hovcolor: "hover:text-rose-500" },
+    { name: "Email", link: "mailto:it.society@kiit.ac.in", icon: faEnvelope, hovcolor: "hover:text-red-500" },
+    { name: "Github", link: "https://github.com/kiit-konnexions/", icon: faGithub, hovcolor: "hover:text-gray-500" },
     { name: "Location", link: link, icon: faLocationDot, hovcolor: "hover:text-green-500" },
   ]
 
