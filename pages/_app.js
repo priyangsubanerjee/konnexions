@@ -2,9 +2,7 @@ import '@/styles/globals.css'
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-// import Font Awesome CSS
 import "@fortawesome/fontawesome-svg-core/styles.css"; 
-
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; 
 
