@@ -7,7 +7,7 @@ import Head from "next/head";
 export async function getServerSideProps() {
   const resp = await axios.get(
     process.env.NODE_ENV == "production"
-      ? "https://konnexions.netlify.app/api/member"
+      ? "https://konnexions-test.netlify.app/api/member"
       : "http://localhost:3000/api/member"
   );
 

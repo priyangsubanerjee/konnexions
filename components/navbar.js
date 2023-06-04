@@ -11,7 +11,7 @@ export default function NavBar() {
       if (data) return;
       const resp = await axios.get(
         process.env.NODE_ENV == "production"
-          ? "https://konnexions.netlify.app/api/logos"
+          ? "https://konnexions-test.netlify.app/api/logos"
           : "http://localhost:3000/api/logos"
       );
       setData(resp.data.data);

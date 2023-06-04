@@ -3,7 +3,7 @@
 <h3 align="center">IT & web Development Society</h3>
 
 <p align="center">
-  <a href="https://konnexions.netlify.app">
+  <a href="https://konnexions-test.netlify.app">
     <img src="public/logos/grplogo2.png" alt="Konnexions Logo" width="100" height="100">
   </a>
   <a href="https://kiit.ac.in/">
@@ -16,7 +16,7 @@
 
 <p align="center">
   <strong>Official Website of KIIT Konnexions</strong> <br />
-  <a href="https://konnexions.netlify.app">View Demo</a>
+  <a href="https://konnexions-test.netlify.app">View Demo</a>
   <br />
   <br />
   The repository contains the source code of the official website of KIIT Konnexions, the IT & web development society of KIIT Deemed to be University, Bhubaneswar. The website is built with minimal tech stack and is deployed on Netlify. The website is aimed to be a one-stop destination for all the information regarding the society and its activities with its modern and minimal design.
