@@ -16,17 +16,17 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="fixed bottom-0 flex bg-gradient-to-t from-slate-900/80 backdrop-blur text-white text-sm lg:text-base inset-x-0 z-30">
-      <div className="container mx-auto px-6 lg:py-6 py-4">
+    <footer className="fixed bottom-0 flex bg-transparent backdrop-blur text-white text-sm lg:text-base inset-x-0 z-30">
+      <div className="container mx-auto px-6 lg:my-2">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-row space-x-4">
+          <div className="flex flex-row space-x-4 my-1">
             {socials.map(social => { return (
               <a key={social.name} href={social.link} target="_blank" rel="noreferrer" className={`hover:${social.hovcolor}`}>
                 <FontAwesomeIcon icon={social.icon} className="h-8 w-8 cursor-pointer" />
               </a>
             )})}
           </div>
-          <div className="mt-2 md:mt-0">
+          <div>
             <p className="text-center md:text-left">
               © {year} KIIT Konnexions
             </p>
