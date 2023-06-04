@@ -4,7 +4,7 @@ import { FaGithub, FaEnvelope } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from '@fortawesome/free-solid-svg-icons'
 
-const MemberCard = ({ member }) => {
+const MemberCard = ({ data }) => {
   return (
     <div className="relative w-[355px] h-[420px]">
       <img
@@ -15,38 +15,38 @@ const MemberCard = ({ member }) => {
       <div className="absolute inset-0 top-16 h-full w-[218px] mx-auto">
         <div className="p-2 relative w-full overflow-hidden h-[200px] rounded">
           <img
-            src={member.image.url}
+            src={data.image.url}
             alt=""
             className="object-cover w-[95%] mx-auto mt-1 h-auto absolute inset-0  rounded"
           />
         </div>
         <h3 className="text-lg text-white font-semibold text-center my-4 px-4">
-          {member.name}
+          {data.name}
         </h3>
         <div className="flex flex-row justify-between w-full">
           <div className="h-[1.6px] w-12 my-auto bg-gradient-to-r from-[#ffffff67] to-[transparent]" />
 
           <div className="bg-card_bg px-2 py-2 text-xs rounded mx-1">
             <p className="text-white font-medium text-center w-full leading-6">
-              {member.domain}
+              {data.domain}
             </p>
           </div>
 
           <div className="h-[1.6px] w-12 my-auto bg-gradient-to-r from-[transparent] to-[#ffffff67]" />
         </div>
         <div className="flex flex-row justify-center items-center mt-4">
-          {member.githubLink && (
-            <a href={member.techLink} className="p-2">
+          {data.techLink && (
+            <a href={data.techLink} className="p-2">
               <FaGithub size={18} color="fff" />
             </a>
           )}
-          {member.email && (
-            <a href={`mailto:${member.email}`} className="p-2">
+          {data.email && (
+            <a href={`mailto:${data.email}`} className="p-2">
               <FaEnvelope size={18} color="fff" />
             </a>
           )}
-          {member.other && (
-            <a href={member.other} className="p-2">
+          {data.other && (
+            <a href={data.other} className="p-2">
               <FontAwesomeIcon icon={faLink} size={18} style={{ color: "#fff" }} />
             </a>
           )}

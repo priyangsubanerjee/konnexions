@@ -10,8 +10,14 @@ function EventsCard({ data }) {
   };
 
   return (
-    <div className="w-[370px] border border-white/20 rounded-2xl p-5">
-      <img src={data.image.url} alt="" className="h-[180px] w-full" />
+    <div className="w-[370px] border border-white/20 rounded-2xl p-5 ml-0">
+      <div className="p-2 relative w-full overflow-hidden h-[200px] rounded">
+        <img
+          src={data.image.url}
+          alt=""
+          className="object-cover w-[95%] mx-auto mt-1 h-auto absolute inset-0  rounded"
+        />
+      </div>
       <h1 className="mt-6 text-lg text-white">{data.name}</h1>
       <p className="text-white/40 text-xs leading-7 mt-1">
         {data.description.substring(0, 150) + "..."}

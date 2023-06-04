@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import EventsCard from "@/components/EventsCard";
 import ServicesCard from "@/components/ServicesCard";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import axios from "axios";
 
@@ -19,6 +20,53 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data }) {
+  const [gmailError, setGmailError] = useState("");
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [subDetails, setSubDetails] = useState({ email: "" });
+  const [successMsg, setSuccessMsg] = useState(false);
+
+  useEffect(() => {
+    const emailRegex = new RegExp(
+      "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    );
+  
+    if (subDetails.email.length == 0) {
+      setFormSubmit(false);
+      return;
+    } else if (!emailRegex.test(subDetails.email)) {
+      setGmailError("Enter a valid email address");
+      setFormSubmit(false);
+      return;
+    } else setFormSubmit(true);
+    setGmailError("");
+  }, [subDetails]);
+
+  const handleChange = (e) => {
+    setSubDetails({ ...subDetails, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formSubmit) return;
+    const resp = await axios.post(
+      process.env.NODE_ENV == "production"
+        ? "https://konnexions.herokuapp.com/api/newsletter"
+        : "http://localhost:3000/api/newsletter",
+      subDetails
+    );
+
+    if (resp.status == 200) {
+      setSubDetails({ email: "" });
+      setFormSubmit(false);
+      setSuccessMsg(true);
+      setTimeout(() => {
+        setSuccessMsg(false);
+      }, 6000);
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <div className="h-screen w-screen fixed inset-0 bg-black overflow-hidden scrollbar-hide">
       <Head>
@@ -123,7 +171,7 @@ export default function Home({ data }) {
             <p className="text-white/70 text-sm text-center mt-3">
               {data.serviceDescription}
             </p>
-            <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:justify-center place-items-center mt-16">
               {data.services.map((item, i) => {
                 return <ServicesCard data={item} key={i} />;
               })}
@@ -136,7 +184,7 @@ export default function Home({ data }) {
             <p className="text-white/70 text-sm text-center mt-3">
               {data.eventsDescription}
             </p>
-            <div className="flex flex-wrap place-content-center place-items-center gap-6 grid grid-cols-1 lg:flex items-center justify-center mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:justify-center place-items-center mt-16">
               {data.events.map((item, i) => {
                 return <EventsCard data={item} key={i} />;
               })}
@@ -159,14 +207,26 @@ export default function Home({ data }) {
                 </p>
                 <div className="items-center mt-7">
                   <input
+                    value={subDetails.email}
+                    onChange={(e) =>
+                      setSubDetails({ ...subDetails, email: e.target.value })
+                    }
                     type="text"
                     placeholder="abc@gmail.com"
                     className="outline-none text-white bg-white/10 py-3 px-3 w-full rounded-md"
                   />
-                  <button className="text-black bg-white/60 w-full text-center py-3 rounded-md mt-4 text-sm">
+                  <button
+                    className="text-black bg-white/60 w-full text-center py-3 rounded-md mt-4 text-sm"
+                    onClick={handleSubmit}
+                    disabled={!formSubmit}
+                  >
                     Submit
                   </button>
                 </div>
+                <div className="text-red-700">{gmailError}</div>
+                {successMsg && (
+                  <div className="text-green-700"> Subscribed Successfully. </div>
+                )}
               </div>
               <div className="flex items-center justify-center w-full">
                 <img src="/mail.png" className="hidden lg:block h-44" alt="" />

@@ -48,9 +48,9 @@ export default function Resources({ data }) {
             </span>
             <div className="w-56 h-[1px] bg-gradient-to-l from-transparent to-white/50"></div>
           </div>
-          <div className="flex flex-wrap place-content-center place-items-center grid grid-cols-2 gap-4 lg:flex items-center justify-center lg:space-x-7 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:justify-center place-items-center mt-16">
             {data.resource.map((item, index) => {
-              return <ResourcesCard key={index} resource={item} />;
+              return <ResourcesCard key={index} data={item} />;
             })}
           </div>
         </div>
